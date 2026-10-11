@@ -1,0 +1,51 @@
+import React from "react";
+import Button from "./Button";
+import { BsArrowRight } from "react-icons/bs";
+
+export default function Hero() {
+  return (
+    <section className="relative h-screen min-h-[650px] w-full flex flex-col justify-between bg-deep-midnight px-10 overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?q=80&w=1170&auto=format&fit=crop')",
+        }}
+      >
+        {/* Gradient Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-midnight/70 via-deep-midnight/40 to-transparent" />
+      </div>
+
+      {/* Main Content Area aligned with Navbar max-w-7xl */}
+      <div className="relative z-10 flex-grow flex items-center max-w-7xl mx-auto w-full pt-20">
+        <div className="max-w-lg text-soft-white mt-8 md:mt-12">
+          <p className="uppercase tracking-[0.3em] text-xs md:text-sm mb-3 font-medium">
+            Exclusive Pet Mobility
+          </p>
+          <h1 className="font-semibold text-5xl md:text-6xl text-white lg:text-7xl leading-tight mb-5">
+            More <br />
+            Journeys <br />
+            <span className="italic text-pawcab-gold">Together.</span>
+          </h1>
+          <p className="text-base md:text-lg font-normal leading-relaxed mb-8 max-w-sm md:max-w-md text-soft-white/90">
+            Private, comfortable, and stress-free transportation for pets and
+            their humans across Bali.
+          </p>
+          <Button variant="primary" icon={<BsArrowRight />}>
+            Book a Ride
+          </Button>
+        </div>
+      </div>
+
+      {/* Bottom Text aligned with Navbar width */}
+      <div className="relative z-10 max-w-8xl mx-auto w-full pb-10 hidden md:flex justify-end pointer-events-none">
+        <p className="text-soft-white/80 font-medium tracking-[0.2em] leading-loose text-sm uppercase text-right">
+          Safe places. <br />
+          Happier pets. <br />
+          Brighter days.
+        </p>
+      </div>
+    </section>
+  );
+}
