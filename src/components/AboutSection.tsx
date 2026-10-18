@@ -1,13 +1,12 @@
 import React from "react";
 import Button from "./Button";
 import { BsArrowRight } from "react-icons/bs";
-import { PiPawPrintFill } from "react-icons/pi";
 
 export default function AboutSection() {
   return (
     <section className="relative w-full py-16 md:py-18 px-10 overflow-hidden bg-warm-ivory">
       {/* Background Image on the Right */}
-      <div className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] lg:w-[56%] h-full">
+      <div className="absolute z-10 right-0 top-0 bottom-0 w-full md:w-[60%] lg:w-[56%] h-full">
         <img
           src="/images/about.jpg"
           alt="Designed Around Them"
@@ -43,9 +42,9 @@ export default function AboutSection() {
           </h2>
           <p className="text-sm md:text-base font-normal leading-relaxed mb-6 text-deep-midnight/80">
             The PawCab is a private pet mobility service created for pets who
-            deserve a safer, calmer, and more comfortable journey — whether it's
-            a vet visit, beach trip, grooming day, or just a little adventure
-            around Bali.
+            deserve a safer, calmer, and more comfortable journey — whether
+            it&apos;s a vet visit, beach trip, grooming day, or just a little
+            adventure around Bali.
           </p>
           <Button variant="secondary" icon={<BsArrowRight />}>
             Our Story

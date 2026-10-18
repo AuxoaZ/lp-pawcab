@@ -3,8 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Header() {
+interface HeaderProps {
+  theme?: "dark" | "light";
+}
+
+export default function Header({ theme = "dark" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -20,23 +25,27 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isLight = theme === "light" && !isScrolled;
+
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 px-10 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 px-6 md:px-10 transition-all duration-300 ${
         isScrolled
-          ? "py-3 bg-deep-midnight/95 backdrop-blur-md shadow-lg"
-          : "py-6 bg-transparent"
+          ? "py-3 bg-deep-midnight/95 backdrop-blur-md shadow-lg text-soft-white"
+          : isLight
+          ? "py-6 bg-transparent text-deep-midnight"
+          : "py-6 bg-transparent text-soft-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto w-full flex justify-between items-center text-soft-white">
+      <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
         {/* Logo Area */}
-        <div className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3 group">
           <Image
             src="/images/logo-pawcab.png"
             alt="The PawCab Logo"
             width={48}
             height={48}
-            className="object-contain shrink-0"
+            className="object-contain shrink-0 group-hover:scale-105 transition-transform"
           />
           <div className="flex items-center">
             <span
@@ -46,39 +55,38 @@ export default function Header() {
               THE PAWCAB
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Navigation */}
         <nav className="hidden lg:flex items-center gap-8 text-sm tracking-widest font-medium uppercase">
-          <a href="#" className="hover:text-pawcab-gold transition-colors">
+          <Link href="/" className="hover:text-pawcab-gold transition-colors">
             Home
-          </a>
-          <a href="#" className="hover:text-pawcab-gold transition-colors">
+          </Link>
+          <Link href="/#services" className="hover:text-pawcab-gold transition-colors">
             Services
-          </a>
-          <a href="#" className="hover:text-pawcab-gold transition-colors">
+          </Link>
+          <Link href="/#coverage" className="hover:text-pawcab-gold transition-colors">
             Zones & Rates
-          </a>
-          <a href="#" className="hover:text-pawcab-gold transition-colors">
+          </Link>
+          <Link href="/#about" className="hover:text-pawcab-gold transition-colors">
             About
-          </a>
-          <a href="#" className="hover:text-pawcab-gold transition-colors">
+          </Link>
+          <Link href="/#faq" className="hover:text-pawcab-gold transition-colors">
             FAQ
-          </a>
+          </Link>
         </nav>
 
         {/* Actions */}
         <div className="flex items-center gap-6">
-          <button className="border border-soft-white rounded-full px-5 py-2 text-xs md:text-sm uppercase tracking-wider flex items-center gap-2 hover:bg-soft-white hover:text-deep-midnight transition-colors">
+          <button
+            className={`border rounded-full px-5 py-2 text-xs md:text-sm uppercase tracking-wider flex items-center gap-2 transition-colors ${
+              isLight
+                ? "border-deep-midnight text-deep-midnight hover:bg-deep-midnight hover:text-soft-white"
+                : "border-soft-white text-soft-white hover:bg-soft-white hover:text-deep-midnight"
+            }`}
+          >
             Book a Ride <BsArrowRight />
           </button>
-          {/* <div className="text-xs md:text-sm tracking-widest font-medium hidden sm:block">
-            <span className="cursor-pointer font-bold">EN</span>{" "}
-            <span className="opacity-50">|</span>{" "}
-            <span className="cursor-pointer opacity-50 hover:opacity-100">
-              ID
-            </span>
-          </div> */}
         </div>
       </div>
     </header>
