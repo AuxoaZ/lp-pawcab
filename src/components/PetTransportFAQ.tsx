@@ -205,7 +205,7 @@ export default function PetTransportFAQ() {
           }`}
         >
           <div className="overflow-hidden">
-            <div className="pl-0 sm:pl-[46px] text-deep-midnight/80 text-sm sm:text-base leading-relaxed font-light">
+            <div className="pl-0 sm:pl-[46px] text-deep-midnight/80 text-sm sm:text-base leading-relaxed font-normal">
               <span className="inline-block px-2 py-0.5 rounded bg-pawcab-gold/20 text-deep-midnight font-bold text-xs uppercase tracking-wider mr-2">
                 Answer
               </span>
@@ -280,7 +280,7 @@ export default function PetTransportFAQ() {
               <h3 className="font-playfair text-2xl sm:text-3xl font-bold leading-snug">
                 Have a unique question or custom itinerary?
               </h3>
-              <p className="text-soft-white/70 font-light text-sm sm:text-base mt-2">
+              <p className="text-soft-white/70 font-normal text-sm sm:text-base mt-2">
                 Whether you need multiple pick-ups, airport transfers with
                 oversized crates, or special medical visits, our Bali team is
                 here to assist.

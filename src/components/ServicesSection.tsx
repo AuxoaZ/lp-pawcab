@@ -16,7 +16,7 @@ export default function ServicesSection() {
       id: "02",
       title: "Dog Walking",
       description: "Little adventure away from home.",
-      href: "#",
+      href: "/services/dog-walking",
       image:
         "https://images.unsplash.com/photo-1659639237692-2442096a1f04?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     },
@@ -24,7 +24,7 @@ export default function ServicesSection() {
       id: "03",
       title: "Pet Sitting",
       description: "Personal care while you're away.",
-      href: "#",
+      href: "/services/pet-sitting",
       image:
         "https://plus.unsplash.com/premium_photo-1661342557114-a67e3c6679a8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     },
@@ -44,9 +44,9 @@ export default function ServicesSection() {
             </h2>
           </div>
           <div className="text-right">
-            <p className="text-deep-midnight/80 font-light mb-2 max-w-sm ml-auto">
-              From daily rides to special adventures, we&apos;re here for every step
-              of their journey.
+            <p className="text-deep-midnight/80 font-normal mb-2 max-w-sm ml-auto">
+              From daily rides to special adventures, we&apos;re here for every
+              step of their journey.
             </p>
             <a
               href="#services"
@@ -76,14 +76,12 @@ export default function ServicesSection() {
                 <h3 className="font-playfair text-2xl font-bold mb-3 group-hover:text-pawcab-navy transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-deep-midnight/70 font-light max-w-[400px] text-sm mb-4">
+                <p className="text-deep-midnight/70 font-normal max-w-[400px] text-sm mb-4">
                   {service.description}
                 </p>
 
                 <div className="flex justify-between items-end">
-                  <span
-                    className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-bold text-warm-taupe group-hover:text-pawcab-gold transition-colors"
-                  >
+                  <span className="inline-flex items-center gap-2 uppercase tracking-widest text-xs font-bold text-warm-taupe group-hover:text-pawcab-gold transition-colors">
                     Learn More <BsArrowRight />
                   </span>
                   <span className="font-playfair text-4xl text-warm-taupe/30 font-bold">

@@ -46,7 +46,7 @@ export default function FeaturesRow() {
               <h4 className=" text-white tracking-wider text-base font-semibold">
                 {feature.title}
               </h4>
-              <p className="text-xs text-soft-white/70 font-light mt-1">
+              <p className="text-xs text-soft-white/70 font-normal mt-1">
                 {feature.subtitle}
               </p>
             </div>

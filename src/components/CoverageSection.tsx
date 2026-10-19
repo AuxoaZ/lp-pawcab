@@ -29,7 +29,7 @@ export default function CoverageSection() {
           <h2 className="font-playfair text-white text-3xl md:text-5xl leading-tight mb-4">
             Find Your <br /> PawCab Zone.
           </h2>
-          <p className="text-soft-white/80 font-light leading-relaxed mb-6 text-sm max-w-xs">
+          <p className="text-soft-white/80 font-normal leading-relaxed mb-6 text-sm max-w-xs">
             Know your zone before you book. Our service covers Bali with simple,
             transparent pricing.
           </p>

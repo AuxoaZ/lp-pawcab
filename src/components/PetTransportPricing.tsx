@@ -6,46 +6,47 @@ export default function PetTransportPricing() {
     {
       id: 1,
       name: "Zone 1",
-      areas: "DENPASAR - KUTA - LEGIAN - SEMINYAK - SANUR",
+      areas: "KOTA DENPASAR - SANUR - SEMINYAK - LEGIAN - KUTA",
       fixedRange: "0 - 5 KM",
       fixedRate: "IDR 50,000",
       kmRange: "5.1 - 15 KM",
       kmRate: "IDR 12,000/KM",
       waText:
-        "Hi PawCab, I'd like to book a Pet Transport for Zone 1 (Denpasar/Kuta/Legian/Seminyak/Sanur).",
+        "Hi PawCab, I'd like to book a Pet Transport for Zone 1 (Kota Denpasar/Sanur/Seminyak/Legian/Kuta).",
     },
     {
       id: 2,
       name: "Zone 2",
-      areas: "KEROBOKAN - DALUNG - CANGGU",
+      areas: "KUTA UTARA - SEMPIDI - DARMASABA - BATU BULAN",
       fixedRange: "0 - 5 KM",
       fixedRate: "IDR 65,000",
       kmRange: "5.1 - 15 KM",
       kmRate: "IDR 13,000/KM",
       waText:
-        "Hi PawCab, I'd like to book a Pet Transport for Zone 2 (Kerobokan/Dalung/Canggu).",
+        "Hi PawCab, I'd like to book a Pet Transport for Zone 2 (Kuta Utara/Sempidi/Darmasaba/Batu Bulan).",
     },
     {
       id: 3,
       name: "Zone 3",
-      areas: "JIMBARAN - NUSA DUA - BENOA",
+      areas: "KUTA SELATAN - NUSA DUA",
       fixedRange: "0 - 5 KM",
       fixedRate: "IDR 70,000",
       kmRange: "5.1 - 15 KM",
       kmRate: "IDR 14,000/KM",
       waText:
-        "Hi PawCab, I'd like to book a Pet Transport for Zone 3 (Jimbaran/Nusa Dua/Benoa).",
+        "Hi PawCab, I'd like to book a Pet Transport for Zone 3 (Kuta Selatan/Nusa Dua).",
     },
     {
       id: 4,
       name: "Zone 4",
-      areas: "TABANAN - UBUD - GIANYAR",
+      areas:
+        "TANAH LOT - SESEH - TABANAN (KEDIRI, KERAMBITAN) - MENGWI - ABIANSEMAL - SUKAWATI - PECATU",
       fixedRange: "0 - 5 KM",
       fixedRate: "IDR 75,000",
       kmRange: "5.1 - 15 KM",
       kmRate: "IDR 15,000/KM",
       waText:
-        "Hi PawCab, I'd like to book a Pet Transport for Zone 4 (Tabanan/Ubud/Gianyar).",
+        "Hi PawCab, I'd like to book a Pet Transport for Zone 4 (Tanah Lot/Seseh/Tabanan (Kediri, Kerambitan)/Mengwi/Abiansemal/Sukawati/Pecatu).",
     },
   ];
 
@@ -66,7 +67,7 @@ export default function PetTransportPricing() {
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl text-deep-midnight font-bold leading-tight mb-4">
             Zone-Based Fare
           </h2>
-          <p className="text-deep-midnight/80 font-light text-base md:text-lg leading-relaxed">
+          <p className="text-deep-midnight/80 font-normal text-base md:text-lg leading-relaxed">
             Find your zone to see the fare for your trip.
           </p>
         </div>
@@ -82,7 +83,7 @@ export default function PetTransportPricing() {
                 {/* Shield Badge & Zone Header */}
                 <div className="flex items-center gap-4 mb-5">
                   {/* SVG Shield Badge matching the design */}
-                  <div className="relative w-12 h-14 sm:w-13 sm:h-15 flex flex-col items-center justify-center shrink-0">
+                  <div className="relative w-12 h-14 sm:w-18 sm:h-18 flex flex-col items-center justify-center shrink-0">
                     <svg
                       viewBox="0 0 40 48"
                       className="absolute inset-0 w-full h-full text-pawcab-navy fill-current drop-shadow-sm group-hover:scale-105 transition-transform"
@@ -90,27 +91,18 @@ export default function PetTransportPricing() {
                       <path d="M20 0 L40 6 L40 28 C40 38 20 48 20 48 C20 48 0 38 0 28 L0 6 Z" />
                     </svg>
                     <div className="relative z-10 text-center text-soft-white">
-                      <span className="block text-[8px] font-bold tracking-widest uppercase leading-none">
+                      <span className="block text-sm md:text-md font-bold tracking-widest uppercase leading-none">
                         ZONE
                       </span>
-                      <span className="block text-xl font-bold leading-none mt-1 font-playfair text-white">
+                      <span className="block text-sm md:text-2xl font-bold leading-none mt-1 font-playfair text-white">
                         {zone.id}
                       </span>
                     </div>
                   </div>
-
-                  <div>
-                    <span className="text-xs uppercase tracking-widest text-warm-taupe font-semibold">
-                      Bali Coverage
-                    </span>
-                    <h3 className="font-playfair text-xl font-bold text-deep-midnight">
-                      Zone {zone.id}
-                    </h3>
-                  </div>
                 </div>
 
                 {/* Covered Areas */}
-                <div className="mb-6 pb-5 border-b border-sand-beige/30 min-h-[56px] flex items-center">
+                <div className="mb-6 pb-5 border-b border-sand-beige/30 min-h-[72px] flex items-center">
                   <p className="font-bold text-deep-midnight text-xs sm:text-sm tracking-wide uppercase leading-relaxed">
                     {zone.areas}
                   </p>
@@ -121,7 +113,7 @@ export default function PetTransportPricing() {
                   {/* Fixed Rate (0 - 5 KM) */}
                   <div className="flex items-center gap-3">
                     {/* Road Perspective SVG Icon */}
-                    <svg
+                    {/* <svg
                       viewBox="0 0 24 32"
                       className="w-5 h-7 text-warm-taupe/80 shrink-0 stroke-current"
                       fill="none"
@@ -143,7 +135,7 @@ export default function PetTransportPricing() {
                         y2="22"
                         strokeDasharray="3 3"
                       />
-                    </svg>
+                    </svg> */}
 
                     <div className="flex-grow flex items-baseline justify-between gap-2">
                       <span className="text-xs sm:text-sm text-deep-midnight/80 font-medium">
@@ -161,7 +153,7 @@ export default function PetTransportPricing() {
                   {/* Per KM Rate (5.1 - 15 KM) */}
                   <div className="flex items-center gap-3">
                     {/* Road Perspective SVG Icon */}
-                    <svg
+                    {/* <svg
                       viewBox="0 0 24 32"
                       className="w-5 h-7 text-warm-taupe/80 shrink-0 stroke-current"
                       fill="none"
@@ -177,7 +169,7 @@ export default function PetTransportPricing() {
                         y2="22"
                         strokeDasharray="3 3"
                       />
-                    </svg>
+                    </svg> */}
 
                     <div className="flex-grow flex items-baseline justify-between gap-2">
                       <span className="text-xs sm:text-sm text-deep-midnight/80 font-medium">
@@ -228,7 +220,7 @@ export default function PetTransportPricing() {
                 Explore The Coverage Map
               </h3>
             </div>
-            <p className="text-xs text-deep-midnight/70 font-light max-w-sm sm:text-right">
+            <p className="text-xs text-deep-midnight/70 font-normal max-w-sm sm:text-right">
               Pinch or scroll to zoom. Tap any highlighted area to verify your
               exact zone.
             </p>

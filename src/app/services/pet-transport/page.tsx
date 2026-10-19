@@ -120,7 +120,7 @@ export default function PetTransportPage() {
               </h1>
 
               {/* Description */}
-              <p className="text-deep-midnight/80 font-light text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-deep-midnight/80 font-medium text-base md:text-lg leading-relaxed mb-8 max-w-xl">
                 Safe, comfortable, and stress-free transportation for your
                 beloved companions. Whether it&apos;s a vet appointment,
                 grooming session, airport transfer, or a little adventure, we
@@ -191,7 +191,7 @@ export default function PetTransportPage() {
                   <h3 className="font-playfair text-lg md:text-xl font-bold text-deep-midnight mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-deep-midnight/70 font-light max-w-[200px]">
+                  <p className="text-xs md:text-sm text-deep-midnight/70 font-medium max-w-[200px]">
                     {item.subtitle}
                   </p>
                 </div>
@@ -228,7 +228,7 @@ export default function PetTransportPage() {
                     Comfort in Every Detail
                   </h2>
 
-                  <p className="text-deep-midnight/80 font-light text-sm sm:text-base leading-relaxed mb-8">
+                  <p className="text-deep-midnight/80 font-medium text-sm sm:text-base leading-relaxed mb-8">
                     Our vehicle is designed to provide a safe and enjoyable
                     travel experience for pets, with a clean, spacious, and
                     air-conditioned cabin. A medium-sized crate is available
@@ -253,7 +253,7 @@ export default function PetTransportPage() {
                       <p className="text-xs uppercase tracking-widest text-warm-taupe font-semibold">
                         Custom arrangements?
                       </p>
-                      <p className="text-xs text-deep-midnight/70 font-light mt-0.5">
+                      <p className="text-xs text-deep-midnight/70 font-medium mt-0.5">
                         Multiple stops or special care available
                       </p>
                     </div>
@@ -294,7 +294,7 @@ export default function PetTransportPage() {
               <h3 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold">
                 Ready for your pet&apos;s next comfortable ride?
               </h3>
-              <p className="text-soft-white/70 font-light text-sm mt-2 max-w-xl">
+              <p className="text-soft-white/70 font-medium text-sm mt-2 max-w-xl">
                 Reserve your ride in advance. We pick up from your doorstep
                 anywhere in Bali.
               </p>
