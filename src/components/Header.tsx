@@ -33,8 +33,8 @@ export default function Header({ theme = "dark" }: HeaderProps) {
         isScrolled
           ? "py-3 bg-deep-midnight/95 backdrop-blur-md shadow-lg text-soft-white"
           : isLight
-          ? "py-6 bg-transparent text-deep-midnight"
-          : "py-6 bg-transparent text-soft-white"
+            ? "py-6 bg-transparent text-deep-midnight"
+            : "py-6 bg-transparent text-soft-white"
       }`}
     >
       <div className="max-w-7xl mx-auto w-full flex justify-between items-center">
@@ -62,18 +62,39 @@ export default function Header({ theme = "dark" }: HeaderProps) {
           <Link href="/" className="hover:text-pawcab-gold transition-colors">
             Home
           </Link>
-          <Link href="/#services" className="hover:text-pawcab-gold transition-colors">
+          <Link
+            href="/#services"
+            className="hover:text-pawcab-gold transition-colors"
+          >
             Services
           </Link>
-          <Link href="/#coverage" className="hover:text-pawcab-gold transition-colors">
+          {/* <Link
+            href="/#coverage"
+            className="hover:text-pawcab-gold transition-colors"
+          >
             Zones & Rates
+          </Link> */}
+          {/* <Link
+            href="/#gallery"
+            className="hover:text-pawcab-gold transition-colors"
+          >
+            Gallery
+          </Link> */}
+          <Link
+            href="/stories"
+            className="hover:text-pawcab-gold transition-colors"
+          >
+            Stories
           </Link>
-          <Link href="/#about" className="hover:text-pawcab-gold transition-colors">
+          <Link
+            href="/#about"
+            className="hover:text-pawcab-gold transition-colors"
+          >
             About
           </Link>
-          <Link href="/#faq" className="hover:text-pawcab-gold transition-colors">
+          {/* <Link href="/#faq" className="hover:text-pawcab-gold transition-colors">
             FAQ
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Actions */}

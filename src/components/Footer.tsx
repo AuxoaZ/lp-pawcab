@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BsInstagram, BsFacebook } from 'react-icons/bs';
 
 export default function Footer() {
@@ -28,6 +29,7 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex gap-6 text-xs uppercase tracking-widest font-medium text-soft-white/70">
+          <Link href="/stories" className="hover:text-pawcab-gold transition-colors">Stories</Link>
           <a href="#" className="hover:text-pawcab-gold transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-pawcab-gold transition-colors">Terms of Service</a>
           <a href="#" className="hover:text-pawcab-gold transition-colors">Contact</a>
