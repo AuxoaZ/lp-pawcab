@@ -1,0 +1,1014 @@
+{
+  "site": {
+    "name": "The PawCab Bali",
+    "tagline": "Private Pet Mobility & Care Across Bali",
+    "phone": "+62 822-6638-3800",
+    "whatsapp": "6282266383800",
+    "defaultWhatsappMessage": "Hello The PawCab! I would like to inquire about booking a ride / service for my pet.",
+    "instagram": "thepawcab",
+    "instagramUrl": "https://instagram.com/thepawcab",
+    "email": "hello@thepawcab.com",
+    "operatingHours": "Daily 07:00 - 21:00 WITA",
+    "serviceArea": "Denpasar, Badung, Gianyar, Tabanan & across Bali"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Services",
+        "href": "/#services"
+      },
+      {
+        "label": "Pet Transport",
+        "href": "/services/pet-transport"
+      },
+      {
+        "label": "Dog Walking",
+        "href": "/services/dog-walking"
+      },
+      {
+        "label": "Pet Sitting",
+        "href": "/services/pet-sitting"
+      },
+      {
+        "label": "Stories",
+        "href": "/stories"
+      },
+      {
+        "label": "Contact",
+        "href": "/#footer"
+      }
+    ],
+    "ctaButton": {
+      "label": "Book a Ride",
+      "href": "https://wa.me/6282266383800?text=Hello%20The%20PawCab!%20I%20would%20like%20to%20book%20a%20ride%20for%20my%20pet."
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Exclusive Pet Mobility",
+      "title1": "More",
+      "title2": "Journeys",
+      "title3Accent": "Together.",
+      "description": "Private, comfortable, and stress-free transportation for pets and their humans across Bali.",
+      "primaryCtaText": "Book a Ride",
+      "primaryCtaHref": "https://wa.me/6282266383800?text=Hello%20The%20PawCab!%20I%20would%20like%20to%20book%20a%20ride%20for%20my%20pet.",
+      "secondaryCtaText": "Our Services",
+      "secondaryCtaHref": "/#services",
+      "bgImage": "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?q=80&w=1170&auto=format&fit=crop",
+      "bottomQuoteLines": [
+        "Safe places.",
+        "Happier pets.",
+        "Brighter days."
+      ]
+    },
+    "features": [
+      {
+        "id": "door-to-door",
+        "title": "Private Door-to-Door",
+        "description": "Dedicated private vehicle exclusively for your pet. No shared cages or unfamiliar pets.",
+        "icon": "car"
+      },
+      {
+        "id": "experienced-handlers",
+        "title": "Trained Pet Handlers",
+        "description": "Compassionate animal lovers trained to keep high-anxiety and senior pets relaxed.",
+        "icon": "heart"
+      },
+      {
+        "id": "climate-control",
+        "title": "Climate-Controlled SUV",
+        "description": "Continuous fresh air conditioning, non-slip sanitized mats, and spacious room for up to 3 dogs.",
+        "icon": "shield"
+      },
+      {
+        "id": "island-coverage",
+        "title": "Bali-Wide Coverage",
+        "description": "Covering Denpasar, Badung, Tabanan, Gianyar, and customized cross-island routes.",
+        "icon": "pin"
+      }
+    ],
+    "about": {
+      "badge": "About The PawCab",
+      "headingLine1": "Designed",
+      "headingLine2": "Around Them.",
+      "description": "The PawCab is a private pet mobility service created for pets who deserve a safer, calmer, and more comfortable journey — whether it's a vet visit, beach trip, grooming day, or just a little adventure around Bali.",
+      "image": "/images/about.jpg",
+      "ctaText": "Our Story",
+      "ctaHref": "/stories",
+      "bottomQuoteLines": [
+        "Because",
+        "The best journey",
+        "include them"
+      ]
+    },
+    "services": {
+      "badge": "Our Services",
+      "heading": "Every Journey, A Better Day.",
+      "subtitle": "From daily rides to special adventures, we're here for every step of their journey.",
+      "items": [
+        {
+          "id": "01",
+          "title": "Pet Transport",
+          "description": "Door-to-door private transportation across Bali.",
+          "href": "/services/pet-transport",
+          "image": "https://images.unsplash.com/photo-1638612844419-0a7a606290b1?q=80&w=1170&auto=format&fit=crop"
+        },
+        {
+          "id": "02",
+          "title": "Dog Walking",
+          "description": "Little adventure away from home.",
+          "href": "/services/dog-walking",
+          "image": "https://images.unsplash.com/photo-1659639237692-2442096a1f04?q=80&w=1170&auto=format&fit=crop"
+        },
+        {
+          "id": "03",
+          "title": "Pet Sitting",
+          "description": "Personal care while you're away.",
+          "href": "/services/pet-sitting",
+          "image": "https://plus.unsplash.com/premium_photo-1661342557114-a67e3c6679a8?q=80&w=1170&auto=format&fit=crop"
+        }
+      ]
+    },
+    "coverage": {
+      "badge": "Our Coverage",
+      "headingLine1": "Find Your",
+      "headingLine2": "PawCab Zone.",
+      "description": "Know your zone before you book. Our service covers Bali with simple, transparent pricing.",
+      "ctaText": "View Zones & Rates",
+      "ctaHref": "/services/pet-transport#pricing",
+      "mapImage": "/images/map-zone.png",
+      "sideImage": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop",
+      "sideQuoteLines": [
+        "Scenic routes.",
+        "Happier",
+        "journeys."
+      ]
+    },
+    "gallery": {
+      "badge": "Our Passengers",
+      "heading": "Happy Tails on Every Ride",
+      "subtitle": "A glimpse of our wonderful furry friends traveling safely and comfortably with The PawCab across Bali.",
+      "items": [
+        {
+          "name": "Appa",
+          "image": "/gallery/APPA_result.webp"
+        },
+        {
+          "name": "Batman",
+          "image": "/gallery/BATMAN_result.webp"
+        },
+        {
+          "name": "Billie & Bella",
+          "image": "/gallery/BILLIE BELLA_result.webp"
+        },
+        {
+          "name": "Biru",
+          "image": "/gallery/BIRU_result.webp"
+        },
+        {
+          "name": "Biscuit",
+          "image": "/gallery/BISCUIT_result.webp"
+        },
+        {
+          "name": "Brady & Mandy",
+          "image": "/gallery/BRADY MANDY_result.webp"
+        },
+        {
+          "name": "Bubi",
+          "image": "/gallery/BUBI_result.webp"
+        },
+        {
+          "name": "Christmas Eve Boxy",
+          "image": "/gallery/CHRISTMAS EVE BOXY_result.webp"
+        },
+        {
+          "name": "Coco",
+          "image": "/gallery/COCO_result.webp"
+        },
+        {
+          "name": "Dark",
+          "image": "/gallery/DARK_result.webp"
+        },
+        {
+          "name": "Hachiko",
+          "image": "/gallery/HACHIKO_result.webp"
+        },
+        {
+          "name": "Jumbo",
+          "image": "/gallery/JUMBO_result.webp"
+        },
+        {
+          "name": "Luna",
+          "image": "/gallery/LUNA_result.webp"
+        },
+        {
+          "name": "Mufasa",
+          "image": "/gallery/MUFASA_result.webp"
+        },
+        {
+          "name": "Mugu & Nana",
+          "image": "/gallery/MUGU NANA_result.webp"
+        },
+        {
+          "name": "Pom",
+          "image": "/gallery/POM_result.webp"
+        },
+        {
+          "name": "Ryuu",
+          "image": "/gallery/RYUU_result.webp"
+        },
+        {
+          "name": "Susan",
+          "image": "/gallery/SUSAN_result.webp"
+        }
+      ]
+    },
+    "comfort": {
+      "badge": "Comfort & Safety",
+      "headingLine1": "Clean, Safe,",
+      "headingLine2": "Stress-Free.",
+      "description": "Every vehicle is sanitized before each journey with non-toxic, pet-safe cleaners. We provide temperature monitoring, secure partitions, and soothing music to keep anxious pets at ease.",
+      "features": [
+        "Sanitized cabin before every single trip",
+        "Continuous high-output AC ventilation",
+        "Spacious crate or open seating options",
+        "Complimentary water bowl and pet pads"
+      ],
+      "image": "/images/pet-crate.jpg",
+      "quoteText": "Because your peace of mind is just as important as theirs."
+    },
+    "reviews": {
+      "badge": "Reviews",
+      "heading": "What Our Customers Say",
+      "elfsightAppId": "elfsight-app-c1a7d814-8e07-4cf9-b595-0369eaca3594"
+    },
+    "howItWorks": {
+      "badge": "Easy Booking",
+      "heading": "How The PawCab Works",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Select Pickup & Destination",
+          "description": "Choose your pickup and drop-off areas using our simple zone fare calculator."
+        },
+        {
+          "number": "02",
+          "title": "Confirm via WhatsApp",
+          "description": "Send your booking details with one tap. Our team confirms driver availability instantly."
+        },
+        {
+          "number": "03",
+          "title": "Door-to-Door Pickup",
+          "description": "Our trained driver arrives on time in a cool, sanitized vehicle ready for your pet."
+        },
+        {
+          "number": "04",
+          "title": "Safe Arrival & Updates",
+          "description": "Relax with live WhatsApp trip updates until your fur baby safely reaches their destination."
+        }
+      ]
+    }
+  },
+  "servicesPages": {
+    "petTransport": {
+      "hero": {
+        "badge": "Private Pet Transportation",
+        "title": "Safe & Stress-Free Pet Rides in Bali",
+        "subtitle": "Door-to-door private SUV rides for vet appointments, grooming sessions, airport transfers, and island adventures.",
+        "heroImage": "https://images.unsplash.com/photo-1703828654117-112baa788e51?q=80&w=1170&auto=format&fit=crop"
+      },
+      "highlights": [
+        {
+          "title": "Private Vehicle",
+          "subtitle": "Just for you and your pet",
+          "icon": "car"
+        },
+        {
+          "title": "Air-Conditioned",
+          "subtitle": "Comfortable in every journey",
+          "icon": "snowflake"
+        },
+        {
+          "title": "Up to 3 Large Dogs",
+          "subtitle": "Spacious and safe",
+          "icon": "paw"
+        },
+        {
+          "title": "Owner Can Join",
+          "subtitle": "You're welcome to come along",
+          "icon": "user"
+        }
+      ],
+      "comfortFeatures": [
+        "Clean and well-maintained vehicle",
+        "Pet-friendly and comfortable interior",
+        "Medium crate available upon request",
+        "Regular sanitization after every ride"
+      ],
+      "pricingConfig": {
+        "heading": "Fare Calculator & Bali Zones",
+        "subheading": "Select your pickup and drop-off areas to instantly calculate the estimated distance and fare.",
+        "badge": "TRANSPARENT PRICING",
+        "minimumFare": 65000,
+        "perExtraPetFee": 35000,
+        "maxPets": 3,
+        "notes": [
+          "Fares are calculated per kilometer based on the origin and destination zones.",
+          "Minimum base fare is Rp 65,000 for short rides.",
+          "Waiting fee is Rp 40,000 per 30 minutes if you require round-trip waiting service."
+        ],
+        "zones": [
+          {
+            "id": 1,
+            "name": "Zone 1",
+            "areasHeadline": "KOTA DENPASAR - SANUR - SEMINYAK - LEGIAN - KUTA",
+            "description": "Pusat kota, area pesisir selatan-tengah, dan sentra wisata utama."
+          },
+          {
+            "id": 2,
+            "name": "Zone 2",
+            "areasHeadline": "KUTA UTARA - SEMPIDI - DARMASABA - BATU BULAN",
+            "description": "Area Kuta Utara, Canggu, Kerobokan, dan koridor barat-tengah."
+          },
+          {
+            "id": 3,
+            "name": "Zone 3",
+            "areasHeadline": "KUTA SELATAN - NUSA DUA",
+            "description": "Semenanjung bukit selatan, Jimbaran, Nusa Dua, dan Benoa."
+          },
+          {
+            "id": 4,
+            "name": "Zone 4",
+            "areasHeadline": "TANAH LOT - SESEH - TABANAN (KEDIRI, KERAMBITAN) - MENGWI - ABIANSEMAL - SUKAWATI - PECATU",
+            "description": "Wilayah barat Tabanan, Mengwi, Gianyar barat (Sukawati), dan Pecatu."
+          }
+        ],
+        "areas": [
+          {
+            "id": "seminyak",
+            "name": "Seminyak",
+            "zoneId": 1,
+            "popular": true
+          },
+          {
+            "id": "kuta",
+            "name": "Kuta",
+            "zoneId": 1,
+            "popular": true
+          },
+          {
+            "id": "legian",
+            "name": "Legian",
+            "zoneId": 1
+          },
+          {
+            "id": "sanur",
+            "name": "Sanur",
+            "zoneId": 1,
+            "popular": true
+          },
+          {
+            "id": "denpasar-kota",
+            "name": "Denpasar City",
+            "zoneId": 1
+          },
+          {
+            "id": "renon",
+            "name": "Renon",
+            "zoneId": 1
+          },
+          {
+            "id": "canggu",
+            "name": "Canggu",
+            "zoneId": 2,
+            "popular": true
+          },
+          {
+            "id": "kerobokan",
+            "name": "Kerobokan",
+            "zoneId": 2,
+            "popular": true
+          },
+          {
+            "id": "berawa",
+            "name": "Berawa Beach",
+            "zoneId": 2
+          },
+          {
+            "id": "pererenan",
+            "name": "Pererenan",
+            "zoneId": 2
+          },
+          {
+            "id": "dalung",
+            "name": "Dalung",
+            "zoneId": 2
+          },
+          {
+            "id": "sempidi",
+            "name": "Sempidi",
+            "zoneId": 2
+          },
+          {
+            "id": "darmasaba",
+            "name": "Darmasaba",
+            "zoneId": 2
+          },
+          {
+            "id": "batubulan",
+            "name": "Batu Bulan",
+            "zoneId": 2
+          },
+          {
+            "id": "jimbaran",
+            "name": "Jimbaran",
+            "zoneId": 3,
+            "popular": true
+          },
+          {
+            "id": "nusa-dua",
+            "name": "Nusa Dua",
+            "zoneId": 3,
+            "popular": true
+          },
+          {
+            "id": "tanjung-benoa",
+            "name": "Tanjung Benoa",
+            "zoneId": 3
+          },
+          {
+            "id": "kuta-selatan",
+            "name": "South Kuta",
+            "zoneId": 3
+          },
+          {
+            "id": "ungasan",
+            "name": "Ungasan",
+            "zoneId": 3
+          },
+          {
+            "id": "tanah-lot",
+            "name": "Tanah Lot",
+            "zoneId": 4,
+            "popular": true
+          },
+          {
+            "id": "seseh",
+            "name": "Seseh",
+            "zoneId": 4
+          },
+          {
+            "id": "tabanan-kediri",
+            "name": "Tabanan (Kediri)",
+            "zoneId": 4
+          },
+          {
+            "id": "tabanan-kerambitan",
+            "name": "Tabanan (Kerambitan)",
+            "zoneId": 4
+          },
+          {
+            "id": "mengwi",
+            "name": "Mengwi",
+            "zoneId": 4
+          },
+          {
+            "id": "abiansemal",
+            "name": "Abiansemal",
+            "zoneId": 4
+          },
+          {
+            "id": "sukawati",
+            "name": "Sukawati / South Ubud",
+            "zoneId": 4,
+            "popular": true
+          },
+          {
+            "id": "pecatu-uluwatu",
+            "name": "Pecatu / Uluwatu",
+            "zoneId": 4,
+            "popular": true
+          }
+        ],
+        "ratesPerKm": {
+          "1-1": 8000,
+          "1-2": 10000,
+          "1-3": 9000,
+          "1-4": 12000,
+          "2-1": 10000,
+          "2-2": 9000,
+          "2-3": 11000,
+          "2-4": 10000,
+          "3-1": 9000,
+          "3-2": 11000,
+          "3-3": 8500,
+          "3-4": 13000,
+          "4-1": 12000,
+          "4-2": 10000,
+          "4-3": 13000,
+          "4-4": 9500
+        },
+        "distancesKm": {
+          "1-1": 6,
+          "1-2": 14,
+          "1-3": 18,
+          "1-4": 28,
+          "2-1": 14,
+          "2-2": 8,
+          "2-3": 24,
+          "2-4": 20,
+          "3-1": 18,
+          "3-2": 24,
+          "3-3": 10,
+          "3-4": 34,
+          "4-1": 28,
+          "4-2": 20,
+          "4-3": 34,
+          "4-4": 12
+        },
+        "areaDistances": {
+          "seminyak_canggu": 9.5,
+          "seminyak_kuta": 5.5,
+          "seminyak_legian": 3.5,
+          "seminyak_sanur": 14.5,
+          "seminyak_denpasar_kota": 9,
+          "seminyak_renon": 11,
+          "seminyak_jimbaran": 13.5,
+          "seminyak_nusa_dua": 22,
+          "seminyak_tanah_lot": 19.5,
+          "seminyak_sukawati": 27,
+          "seminyak_pecatu_uluwatu": 28.5,
+          "seminyak_kerobokan": 4.2,
+          "seminyak_berawa": 6.8,
+          "seminyak_pererenan": 12,
+          "seminyak_tanjung_benoa": 23.5,
+          "seminyak_ungasan": 25,
+          "canggu_kuta": 14,
+          "canggu_legian": 12,
+          "canggu_sanur": 21,
+          "canggu_denpasar_kota": 15,
+          "canggu_renon": 17.5,
+          "canggu_jimbaran": 23,
+          "canggu_nusa_dua": 31,
+          "canggu_tanah_lot": 12,
+          "canggu_seseh": 6.5,
+          "canggu_pererenan": 3.5,
+          "canggu_berawa": 3,
+          "canggu_kerobokan": 5.5,
+          "canggu_dalung": 7,
+          "canggu_sempidi": 12,
+          "canggu_sukawati": 26.5,
+          "canggu_pecatu_uluwatu": 35,
+          "canggu_mengwi": 14.5,
+          "canggu_tabanan_kediri": 16,
+          "sanur_kuta": 13.5,
+          "sanur_legian": 12.5,
+          "sanur_denpasar_kota": 7.5,
+          "sanur_renon": 4.5,
+          "sanur_jimbaran": 18,
+          "sanur_nusa_dua": 20.5,
+          "sanur_tanjung_benoa": 21,
+          "sanur_sukawati": 18,
+          "sanur_batubulan": 11.5,
+          "sanur_tanah_lot": 29,
+          "sanur_pecatu_uluwatu": 32,
+          "kuta_legian": 2.5,
+          "kuta_denpasar_kota": 10,
+          "kuta_renon": 11.5,
+          "kuta_jimbaran": 9.5,
+          "kuta_nusa_dua": 16.5,
+          "kuta_tanjung_benoa": 17,
+          "kuta_kuta_selatan": 12,
+          "kuta_ungasan": 17.5,
+          "kuta_tanah_lot": 23.5,
+          "kuta_pecatu_uluwatu": 24,
+          "kuta_kerobokan": 9,
+          "jimbaran_nusa_dua": 11,
+          "jimbaran_tanjung_benoa": 12.5,
+          "jimbaran_kuta_selatan": 4.5,
+          "jimbaran_ungasan": 7,
+          "jimbaran_pecatu_uluwatu": 15,
+          "jimbaran_denpasar_kota": 16.5,
+          "nusa_dua_tanjung_benoa": 4.5,
+          "nusa_dua_ungasan": 13,
+          "nusa_dua_pecatu_uluwatu": 21,
+          "tanah_lot_tabanan_kediri": 11.5,
+          "tanah_lot_tabanan_kerambitan": 18,
+          "tanah_lot_mengwi": 16,
+          "tanah_lot_sukawati": 33,
+          "tanah_lot_seseh": 7.5,
+          "tanah_lot_pererenan": 9.5,
+          "mengwi_abiansemal": 8.5,
+          "mengwi_tabanan_kediri": 10.5,
+          "sukawati_batubulan": 6.5,
+          "sukawati_denpasar_kota": 13,
+          "sukawati_abiansemal": 15
+        }
+      },
+      "faqs": [
+        {
+          "id": 1,
+          "number": "01",
+          "question": "What type of vehicle do you use for pet transportation?",
+          "answer": "We use a comfortable SUV with full air conditioning to provide a private, safe, and stress-free journey for your pets."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "question": "How many pets can travel in the car?",
+          "answer": "Our vehicle can accommodate up to 3 large dogs or 4 medium-sized dogs, depending on their size and comfort requirements."
+        },
+        {
+          "id": 3,
+          "number": "03",
+          "question": "Is the vehicle air-conditioned?",
+          "answer": "Yes, continuous air conditioning is maintained throughout the journey to keep pets cool and calm in Bali's tropical climate."
+        },
+        {
+          "id": 4,
+          "number": "04",
+          "question": "Can pet owners travel with their pets?",
+          "answer": "Absolutely! Up to 2 human companions are welcome to ride alongside their pets at no extra cost."
+        },
+        {
+          "id": 5,
+          "number": "05",
+          "question": "Do you provide pet transportation outside Bali?",
+          "answer": "At the moment, our transportation service is dedicated to destinations across Bali island only."
+        }
+      ]
+    },
+    "dogWalking": {
+      "hero": {
+        "badge": "Active & Healthy",
+        "title": "Dog Walking in Bali",
+        "subtitle": "Enriching outdoor walks designed around your dog's pace, personality, and physical needs.",
+        "heroImage": "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=1200&auto=format&fit=crop"
+      },
+      "highlights": [
+        {
+          "title": "1-on-1 Attention",
+          "subtitle": "Dedicated experienced handler",
+          "icon": "user"
+        },
+        {
+          "title": "Hydration Provided",
+          "subtitle": "Fresh water and rest stops",
+          "icon": "drop"
+        },
+        {
+          "title": "Paws Cleaned",
+          "subtitle": "Post-walk sanitization included",
+          "icon": "sparkle"
+        },
+        {
+          "title": "Live Updates",
+          "subtitle": "GPS route and photos sent",
+          "icon": "chat"
+        }
+      ],
+      "pricingPlans": [
+        {
+          "id": "neighborhood",
+          "title": "Neighborhood Walk",
+          "subtitle": "1 Hour Session",
+          "price": 150000,
+          "unit": "/ session",
+          "features": [
+            "Up to 2 dogs per session",
+            "Within your neighborhood",
+            "No transportation required",
+            "Paw cleaning & hydration included"
+          ],
+          "popular": false,
+          "waText": "Hi PawCab, I'd like to book a Neighborhood Walk (1 Hour Session - Rp 150,000)."
+        },
+        {
+          "id": "beach",
+          "title": "Beach Walk",
+          "subtitle": "1 Hour Session + Transport",
+          "price": 250000,
+          "unit": "/ session",
+          "features": [
+            "Up to 2 dogs per session",
+            "Includes private round-trip transportation",
+            "Visit a suitable nearby dog-friendly beach",
+            "Full paw & coat rinse after walk"
+          ],
+          "popular": true,
+          "waText": "Hi PawCab, I'd like to book a Beach Walk (1 Hour Session - Rp 250,000)."
+        }
+      ],
+      "faqs": [
+        {
+          "id": 1,
+          "number": "01",
+          "question": "Can I request walking times?",
+          "answer": "Yes, we recommend early morning (07:00 - 09:00) or late afternoon (16:30 - 18:30) to avoid hot pavement and excessive sun."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "question": "What if my dog is reactive to other dogs?",
+          "answer": "Our walks are private and handlers are trained to manage space, choose quiet paths, and ensure zero confrontation with street dogs."
+        }
+      ]
+    },
+    "petSitting": {
+      "hero": {
+        "badge": "Loving In-Home Care",
+        "title": "Professional Pet Sitting",
+        "subtitle": "Reliable, loving care for your cats and dogs in the comfort and familiarity of your home while you travel.",
+        "heroImage": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=1200&auto=format&fit=crop"
+      },
+      "highlights": [
+        {
+          "title": "Familiar Home",
+          "subtitle": "Stress-free routine for your pets",
+          "icon": "home"
+        },
+        {
+          "title": "Feeding & Meds",
+          "subtitle": "Strict adherence to dietary schedules",
+          "icon": "bowl"
+        },
+        {
+          "title": "Playtime & Cuddles",
+          "subtitle": "Enrichment and undivided affection",
+          "icon": "heart"
+        },
+        {
+          "title": "Daily Reports",
+          "subtitle": "Detailed photo & video updates",
+          "icon": "camera"
+        }
+      ],
+      "services": [
+        {
+          "id": "drop-in",
+          "title": "Drop-in Visit",
+          "subtitle": "45 Mins Session",
+          "price": 120000,
+          "unit": "/ visit",
+          "features": [
+            "Fresh food & water refill",
+            "Litter box cleaning / potty break",
+            "Playtime & companionship",
+            "Photo & video check-in"
+          ],
+          "popular": false,
+          "waText": "Hi PawCab, I'd like to book a Drop-in Pet Sitting Visit (Rp 120,000)."
+        },
+        {
+          "id": "half-day",
+          "title": "Half-Day In-Home Care",
+          "subtitle": "4 Hours Session",
+          "price": 300000,
+          "unit": "/ 4 hours",
+          "features": [
+            "Continuous companionship",
+            "1 neighborhood walk included",
+            "Feeding, medication & play",
+            "House plant watering & mail check"
+          ],
+          "popular": true,
+          "waText": "Hi PawCab, I'd like to book Half-Day In-Home Pet Care (Rp 300,000)."
+        },
+        {
+          "id": "overnight",
+          "title": "Overnight House Sitting",
+          "subtitle": "12 Hours (19:00 - 07:00)",
+          "price": 450000,
+          "unit": "/ night",
+          "features": [
+            "Full overnight presence",
+            "Evening & morning walks/feeding",
+            "Emergency transport standby",
+            "Complete peace of mind"
+          ],
+          "popular": false,
+          "waText": "Hi PawCab, I'd like to book Overnight Pet Sitting (Rp 450,000)."
+        }
+      ],
+      "faqs": [
+        {
+          "id": 1,
+          "number": "01",
+          "question": "Do you do a meet-and-greet beforehand?",
+          "answer": "Yes, we always arrange a complimentary meet-and-greet so your pets become familiar with their sitter and we can review routines."
+        },
+        {
+          "id": 2,
+          "number": "02",
+          "question": "Can you administer oral medication?",
+          "answer": "Yes, our sitters are experienced in administering oral medications and supplements according to your vet's instructions."
+        }
+      ]
+    }
+  },
+  "stories": {
+    "hero": {
+      "badge": "PawCab Community",
+      "title": "Real Stories, Happy Paws",
+      "subtitle": "Real experiences of pets and their humans traveling safely, comfortably, and happily across Bali.",
+      "heroImage": "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1200&auto=format&fit=crop"
+    },
+    "highlights": [
+      {
+        "title": "Compassionate Care",
+        "subtitle": "Every pet treated like family",
+        "icon": "heart"
+      },
+      {
+        "title": "Private & Spacious",
+        "subtitle": "No shared cages or unfamiliar pets",
+        "icon": "car"
+      },
+      {
+        "title": "Safe & Stress-Free",
+        "subtitle": "Calm driving & trained handlers",
+        "icon": "shield"
+      },
+      {
+        "title": "Live Trip Updates",
+        "subtitle": "Photos & updates via WhatsApp",
+        "icon": "chat"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Happy Pets Moved",
+        "value": "1,200+",
+        "description": "Dogs, cats, and rescues safely transported across Bali."
+      },
+      {
+        "label": "Bali Kilometers Covered",
+        "value": "45,000+",
+        "description": "From coastal beaches to mountain villas."
+      },
+      {
+        "label": "5-Star Owner Reviews",
+        "value": "99.8%",
+        "description": "Consistently rated 5 stars for safety and care."
+      },
+      {
+        "label": "Trusted Handlers",
+        "value": "100%",
+        "description": "Animal first-aid and pet behavior trained."
+      }
+    ],
+    "spotlightStory": {
+      "id": "luna-echo-beach",
+      "title": "Luna's First Sunset Run at Echo Beach",
+      "petName": "Luna",
+      "ownerName": "Sarah & Luna",
+      "quote": "PawCab completely changed how we explore Bali. Luna hopped in without any hesitation!",
+      "story": "Before discovering PawCab, getting Luna into any regular car was a stressful ordeal. She would pace, pant, and refuse to enter. PawCab provided a flat, clean floor mat, gentle air conditioning, and a driver who understood pets. By the time we arrived at Echo Beach, Luna was relaxed, happy, and energized for an unforgettable sunset run.",
+      "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop",
+      "rating": 5
+    },
+    "storiesList": [
+      {
+        "id": "luna-echo-beach",
+        "title": "Luna's First Sunset Run at Echo Beach",
+        "petName": "Luna",
+        "ownerName": "Sarah & Luna",
+        "category": "adventures",
+        "categoryLabel": "Beach Adventure",
+        "location": "Canggu to Echo Beach",
+        "date": "October 2026",
+        "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop",
+        "imageAlt": "Two happy dogs running freely on open grass in the sunshine",
+        "excerpt": "Luna used to get car-sick on normal rides. With PawCab's spacious cabin and gentle driving, she had the calmest ride of her life.",
+        "fullStory": "Before discovering PawCab, getting Luna into any regular car was a stressful ordeal. She would pace, pant, and refuse to enter. PawCab provided a flat, clean floor mat, gentle air conditioning, and a driver who understood pets.",
+        "quote": "PawCab completely changed how we explore Bali. Luna hopped in without any hesitation!",
+        "rating": 5
+      },
+      {
+        "id": "milo-koko-ubud",
+        "title": "Milo & Koko: Moving to Their New Villa in Ubud",
+        "petName": "Milo & Koko",
+        "ownerName": "David & Christine",
+        "category": "relocation",
+        "categoryLabel": "Villa Relocation",
+        "location": "Seminyak to Ubud",
+        "date": "September 2026",
+        "image": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1200&auto=format&fit=crop",
+        "imageAlt": "Cute calm cat looking comfortably through soft light",
+        "excerpt": "Relocating two rescue cats across Bali can be noisy and nerve-wracking. PawCab provided a quiet, crate-secure environment.",
+        "fullStory": "Cats are sensitive to motion and loud noises. When moving our villa from Seminyak up to Ubud, we were dreading the two-hour transit. PawCab arrived on time, secured the carriers safely, and took the scenic roads with minimal stops.",
+        "quote": "Door-to-door, prompt arrival, and zero complaints from our two cats the whole trip.",
+        "rating": 5
+      },
+      {
+        "id": "rocky-sunset-vet",
+        "title": "Rocky's Post-Surgery Comfort Ride",
+        "petName": "Rocky",
+        "ownerName": "Amanda M.",
+        "category": "vet",
+        "categoryLabel": "Veterinary Care",
+        "location": "Sunset Road to Canggu",
+        "date": "August 2026",
+        "image": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=1200&auto=format&fit=crop",
+        "imageAlt": "Golden dog resting peacefully wrapped in blanket",
+        "excerpt": "Transporting a 35kg dog after orthopedic surgery required utmost gentleness. PawCab's handler helped lift him with a stretcher mat.",
+        "fullStory": "Rocky underwent knee surgery at Sunset Vet and could not put weight on his back leg. The PawCab driver brought a specialized lifting harness and drove at a steady pace to avoid any jolts.",
+        "quote": "The gentle handling made all the difference during a very anxious morning.",
+        "rating": 5
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "prod-1",
+      "name": "Medium Travel Crate Rental",
+      "category": "Equipment",
+      "price": 50000,
+      "unit": "per ride",
+      "description": "Sturdy, ventilated, airline-approved travel crate for cats or medium dogs.",
+      "image": "/images/pet-crate.jpg",
+      "status": "active",
+      "stock": 4
+    },
+    {
+      "id": "prod-2",
+      "name": "Round-Trip Waiting Service",
+      "category": "Add-on",
+      "price": 40000,
+      "unit": "per 30 min",
+      "description": "Driver stands by on-site during your pet's vet or grooming appointment.",
+      "image": "https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?q=80&w=800&auto=format&fit=crop",
+      "status": "active",
+      "stock": 99
+    },
+    {
+      "id": "prod-3",
+      "name": "Second Pet Companion Surcharge",
+      "category": "Add-on",
+      "price": 35000,
+      "unit": "per additional pet",
+      "description": "Additional pet space and handler care traveling together in the same ride.",
+      "image": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop",
+      "status": "active",
+      "stock": 99
+    },
+    {
+      "id": "prod-4",
+      "name": "Post-Beach Paw Sanitizing Kit",
+      "category": "Care Kit",
+      "price": 30000,
+      "unit": "per kit",
+      "description": "Hypoallergenic wipes and paw balm application after outdoor runs.",
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop",
+      "status": "active",
+      "stock": 25
+    }
+  ],
+  "footer": {
+    "brandDescription": "Bali's premier private mobility and care service dedicated exclusively to pets and their owners.",
+    "quickLinks": [
+      {
+        "label": "Pet Transport",
+        "href": "/services/pet-transport"
+      },
+      {
+        "label": "Dog Walking",
+        "href": "/services/dog-walking"
+      },
+      {
+        "label": "Pet Sitting",
+        "href": "/services/pet-sitting"
+      },
+      {
+        "label": "Stories",
+        "href": "/stories"
+      },
+      {
+        "label": "Admin CMS",
+        "href": "/login"
+      }
+    ],
+    "socialLinks": [
+      {
+        "platform": "Instagram",
+        "url": "https://instagram.com/thepawcab",
+        "label": "@thepawcab"
+      },
+      {
+        "platform": "WhatsApp",
+        "url": "https://wa.me/6282266383800",
+        "label": "+62 822-6638-3800"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:hello@thepawcab.com",
+        "label": "hello@thepawcab.com"
+      }
+    ],
+    "copyrightText": "© 2026 The PawCab Bali. All rights reserved."
+  }
+}

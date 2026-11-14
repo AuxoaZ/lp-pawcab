@@ -1,15 +1,20 @@
 import React from "react";
 import Button from "./Button";
 import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
+import contentData from "@/data/content.json";
 
 export default function AboutSection() {
+  const about = contentData.home.about;
+
   return (
     <section className="relative w-full py-16 md:py-18 px-10 overflow-hidden bg-warm-ivory">
       {/* Background Image on the Right */}
       <div className="absolute z-10 right-0 top-0 bottom-0 w-full md:w-[60%] lg:w-[56%] h-full">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/about.jpg"
-          alt="Designed Around Them"
+          src={about.image}
+          alt={about.headingLine1 + " " + about.headingLine2}
           className="w-full h-full object-cover object-center"
         />
         {/* Soft edge blend gradient on the left edge of the image */}
@@ -35,30 +40,31 @@ export default function AboutSection() {
         {/* Text Content */}
         <div className="w-full md:w-1/2 lg:w-5/12">
           <p className="uppercase tracking-[0.2em] text-xs md:text-sm text-warm-taupe font-semibold mb-3">
-            About The PawCab
+            {about.badge}
           </p>
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-4">
-            Designed <br /> Around Them.
+            {about.headingLine1} <br /> {about.headingLine2}
           </h2>
           <p className="text-sm md:text-base font-normal leading-relaxed mb-6 text-deep-midnight/80">
-            The PawCab is a private pet mobility service created for pets who
-            deserve a safer, calmer, and more comfortable journey — whether
-            it&apos;s a vet visit, beach trip, grooming day, or just a little
-            adventure around Bali.
+            {about.description}
           </p>
-          <Button variant="secondary" icon={<BsArrowRight />}>
-            Our Story
-          </Button>
+          <Link href={about.ctaHref || "/stories"}>
+            <Button variant="secondary" icon={<BsArrowRight />}>
+              {about.ctaText}
+            </Button>
+          </Link>
         </div>
-
-        {/* Cursive Text Overlay at bottom right */}
       </div>
+
       {/* Bottom Text */}
       <div className="absolute bottom-10 right-10 text-right z-10 hidden md:block">
         <p className="text-soft-white/80 font-medium tracking-[0.2em] leading-loose text-base">
-          Because <br />
-          The best journey <br />
-          include them
+          {about.bottomQuoteLines?.map((line, i) => (
+            <React.Fragment key={i}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
         </p>
       </div>
     </section>

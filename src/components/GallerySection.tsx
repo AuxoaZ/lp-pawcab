@@ -2,46 +2,29 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
-
-const galleryImages = [
-  "/gallery/APPA_result.webp",
-  "/gallery/BATMAN_result.webp",
-  "/gallery/BILLIE%20BELLA_result.webp",
-  "/gallery/BIRU_result.webp",
-  "/gallery/BISCUIT_result.webp",
-  "/gallery/BRADY%20MANDY_result.webp",
-  "/gallery/BUBI_result.webp",
-  "/gallery/CHRISTMAS%20EVE%20BOXY_result.webp",
-  "/gallery/COCO_result.webp",
-  "/gallery/DARK_result.webp",
-  "/gallery/HACHIKO_result.webp",
-  "/gallery/JUMBO_result.webp",
-  "/gallery/LUNA_result.webp",
-  "/gallery/MUFASA_result.webp",
-  "/gallery/MUGU%20NANA_result.webp",
-  "/gallery/POM_result.webp",
-  "/gallery/RYUU_result.webp",
-  "/gallery/SUSAN_result.webp",
-];
+import contentData from "@/data/content.json";
 
 export default function GallerySection() {
+  const gallery = contentData.home.gallery;
+  const galleryItems = gallery.items || [];
+
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const showNext = useCallback(() => {
-    if (lightboxIndex === null) return;
+    if (lightboxIndex === null || galleryItems.length === 0) return;
     setLightboxIndex((prev) =>
-      prev !== null ? (prev + 1) % galleryImages.length : 0
+      prev !== null ? (prev + 1) % galleryItems.length : 0
     );
-  }, [lightboxIndex]);
+  }, [lightboxIndex, galleryItems.length]);
 
   const showPrev = useCallback(() => {
-    if (lightboxIndex === null) return;
+    if (lightboxIndex === null || galleryItems.length === 0) return;
     setLightboxIndex((prev) =>
       prev !== null
-        ? (prev - 1 + galleryImages.length) % galleryImages.length
+        ? (prev - 1 + galleryItems.length) % galleryItems.length
         : 0
     );
-  }, [lightboxIndex]);
+  }, [lightboxIndex, galleryItems.length]);
 
   useEffect(() => {
     if (lightboxIndex === null) return;
@@ -72,34 +55,45 @@ export default function GallerySection() {
         {/* Section Header */}
         <div className="mb-8 md:mb-12">
           <p className="uppercase tracking-[0.2em] text-xs md:text-sm text-warm-taupe font-semibold mb-2">
-            Gallery
+            {gallery.badge || "Gallery"}
           </p>
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl text-deep-midnight">
-            Our Passengers
+            {gallery.heading || "Our Passengers"}
           </h2>
+          {gallery.subtitle && (
+            <p className="text-deep-midnight/70 text-sm mt-2 max-w-xl">
+              {gallery.subtitle}
+            </p>
+          )}
         </div>
 
-        {/* Gallery Grid - All 18 Images */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-5">
-          {galleryImages.map((src, idx) => (
+          {galleryItems.map((item, idx) => (
             <div
               key={idx}
               onClick={() => setLightboxIndex(idx)}
               className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-sand-beige/20 border border-sand-beige/40 shadow-sm hover:shadow-xl hover:border-pawcab-gold/70 transition-all duration-300 cursor-pointer group"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={src}
-                alt={`PawCab Passenger ${idx + 1}`}
+                src={item.image}
+                alt={item.name || `PawCab Passenger ${idx + 1}`}
                 loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
               />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-deep-midnight/80 via-deep-midnight/30 to-transparent p-3 pt-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="text-white text-xs font-semibold truncate text-center">
+                  {item.name}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Lightbox Modal */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && galleryItems[lightboxIndex] && (
         <div
           role="dialog"
           aria-modal="true"
@@ -122,9 +116,9 @@ export default function GallerySection() {
               showPrev();
             }}
             aria-label="Previous image"
-            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-13 md:h-13 rounded-full bg-soft-white/10 hover:bg-soft-white/25 text-soft-white flex items-center justify-center transition-all cursor-pointer z-20 backdrop-blur-sm"
+            className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-soft-white/10 hover:bg-soft-white/25 text-soft-white flex items-center justify-center transition-all cursor-pointer z-20 hover:scale-105"
           >
-            <IoChevronBack className="text-2xl" />
+            <IoChevronBack className="text-xl md:text-2xl" />
           </button>
 
           {/* Next Arrow Button */}
@@ -134,21 +128,31 @@ export default function GallerySection() {
               showNext();
             }}
             aria-label="Next image"
-            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-11 h-11 md:w-13 md:h-13 rounded-full bg-soft-white/10 hover:bg-soft-white/25 text-soft-white flex items-center justify-center transition-all cursor-pointer z-20 backdrop-blur-sm"
+            className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full bg-soft-white/10 hover:bg-soft-white/25 text-soft-white flex items-center justify-center transition-all cursor-pointer z-20 hover:scale-105"
           >
-            <IoChevronForward className="text-2xl" />
+            <IoChevronForward className="text-xl md:text-2xl" />
           </button>
 
-          {/* Full Image */}
+          {/* Active Image Container */}
           <div
-            className="relative overflow-hidden rounded-2xl shadow-2xl border border-soft-white/15 max-h-[85vh] max-w-[90vw] aspect-[4/5] bg-deep-midnight"
+            className="relative max-w-4xl max-h-[85vh] w-full h-full flex flex-col items-center justify-center p-2"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={galleryImages[lightboxIndex]}
-              alt={`PawCab Passenger ${lightboxIndex + 1}`}
-              className="w-full h-full object-cover"
+              src={galleryItems[lightboxIndex].image}
+              alt={galleryItems[lightboxIndex].name}
+              className="max-w-full max-h-[75vh] object-contain rounded-2xl shadow-2xl"
             />
+            {/* Caption & Counter */}
+            <div className="mt-4 text-center">
+              <p className="text-soft-white font-medium text-base md:text-lg">
+                {galleryItems[lightboxIndex].name}
+              </p>
+              <p className="text-soft-white/60 text-xs md:text-sm font-light mt-0.5">
+                {lightboxIndex + 1} of {galleryItems.length}
+              </p>
+            </div>
           </div>
         </div>
       )}

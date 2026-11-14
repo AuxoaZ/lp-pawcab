@@ -4,6 +4,8 @@
 // langsung ke headless CMS (Sanity / Strapi / Supabase / JSON API).
 // ============================================================================
 
+import contentData from "@/data/content.json";
+
 export interface ZoneDefinition {
   id: number;
   name: string; // e.g. "Zone 1"
@@ -18,8 +20,9 @@ export interface AreaLocation {
   popular?: boolean;
 }
 
-// 1. DAFTAR ZONA RESMI PAWCAB
-export const PAWCAB_ZONES: ZoneDefinition[] = [
+// 1. DAFTAR ZONA RESMI PAWCAB (Sync with content.json with fallback)
+export const PAWCAB_ZONES: ZoneDefinition[] =
+  (contentData?.servicesPages?.petTransport?.pricingConfig?.zones as ZoneDefinition[]) || [
   {
     id: 1,
     name: "Zone 1",
@@ -47,8 +50,9 @@ export const PAWCAB_ZONES: ZoneDefinition[] = [
   },
 ];
 
-// 2. DAFTAR DAERAH PER ZONA (Untuk Dropdown & Pencarian)
-export const PAWCAB_AREAS: AreaLocation[] = [
+// 2. DAFTAR DAERAH PER ZONA (Sync with content.json with fallback)
+export const PAWCAB_AREAS: AreaLocation[] =
+  (contentData?.servicesPages?.petTransport?.pricingConfig?.areas as AreaLocation[]) || [
   // Zone 1
   { id: "seminyak", name: "Seminyak", zoneId: 1, popular: true },
   { id: "kuta", name: "Kuta", zoneId: 1, popular: true },
@@ -85,10 +89,9 @@ export const PAWCAB_AREAS: AreaLocation[] = [
   { id: "pecatu-uluwatu", name: "Pecatu / Uluwatu", zoneId: 4, popular: true },
 ];
 
-// 3. TARIF PER KM ANTAR-ZONA (IDR / KM)
-// Format key: `${fromZone}-${toZone}`
-// Contoh: Zona 1 ke Zona 2 = 10.000 / km, Zona 1 ke Zona 3 = 9.000 / km, dsb.
-export const ZONE_RATES_PER_KM: Record<string, number> = {
+// 3. TARIF PER KM ANTAR-ZONA (Sync with content.json with fallback)
+export const ZONE_RATES_PER_KM: Record<string, number> =
+  (contentData?.servicesPages?.petTransport?.pricingConfig?.ratesPerKm as Record<string, number>) || {
   // Asal Zona 1
   "1-1": 8000, // Dalam Zona 1: 8 rb / km
   "1-2": 10000, // Zona 1 -> Zona 2: 10 rb / km
@@ -114,65 +117,108 @@ export const ZONE_RATES_PER_KM: Record<string, number> = {
   "4-4": 11000, // Dalam Zona 4: 11 rb / km
 };
 
-// Minimal tarif order agar driver & operasional tetap tercover
-export const MINIMUM_FARE = 35000;
+// Minimal tarif order agar driver & operasional tetap tercover (Sync with content.json)
+export const MINIMUM_FARE =
+  contentData?.servicesPages?.petTransport?.pricingConfig?.minimumFare ?? 65000;
 
-// 4. MATRIKS JARAK REALISTIS ANTAR DAERAH (DUMMY BALI ROUTES IN KM)
+// 4. MATRIKS JARAK REALISTIS ANTAR DAERAH (Sync with content.json with fallback)
 // Format key: `${fromAreaId}_${toAreaId}` (dua arah/bidirectional)
-const SPECIFIC_DISTANCES: Record<string, number> = {
+export const AREA_DISTANCES: Record<string, number> =
+  (contentData?.servicesPages?.petTransport?.pricingConfig as { areaDistances?: Record<string, number> })?.areaDistances || {
   // Seminyak routes
   seminyak_canggu: 9.5,
   seminyak_kuta: 5.5,
+  seminyak_legian: 3.5,
   seminyak_sanur: 14.5,
-  seminyak_denpasar: 9.0,
+  seminyak_denpasar_kota: 9.0,
+  seminyak_renon: 11.0,
   seminyak_jimbaran: 13.5,
   seminyak_nusa_dua: 22.0,
   seminyak_tanah_lot: 19.5,
   seminyak_sukawati: 27.0,
   seminyak_pecatu_uluwatu: 28.5,
   seminyak_kerobokan: 4.2,
+  seminyak_berawa: 6.8,
+  seminyak_pererenan: 12.0,
+  seminyak_tanjung_benoa: 23.5,
+  seminyak_ungasan: 25.0,
 
   // Canggu routes
   canggu_kuta: 14.0,
+  canggu_legian: 12.0,
   canggu_sanur: 21.0,
-  canggu_denpasar: 15.0,
+  canggu_denpasar_kota: 15.0,
+  canggu_renon: 17.5,
   canggu_jimbaran: 23.0,
   canggu_nusa_dua: 31.0,
   canggu_tanah_lot: 12.0,
   canggu_seseh: 6.5,
   canggu_pererenan: 3.5,
+  canggu_berawa: 3.0,
+  canggu_kerobokan: 5.5,
+  canggu_dalung: 7.0,
+  canggu_sempidi: 12.0,
   canggu_sukawati: 26.5,
   canggu_pecatu_uluwatu: 35.0,
+  canggu_mengwi: 14.5,
+  canggu_tabanan_kediri: 16.0,
 
   // Sanur routes
   sanur_kuta: 13.5,
-  sanur_denpasar: 7.5,
+  sanur_legian: 12.5,
+  sanur_denpasar_kota: 7.5,
+  sanur_renon: 4.5,
   sanur_jimbaran: 18.0,
   sanur_nusa_dua: 20.5,
+  sanur_tanjung_benoa: 21.0,
   sanur_sukawati: 18.0,
+  sanur_batubulan: 11.5,
   sanur_tanah_lot: 29.0,
   sanur_pecatu_uluwatu: 32.0,
 
   // Kuta routes
+  kuta_legian: 2.5,
+  kuta_denpasar_kota: 10.0,
+  kuta_renon: 11.5,
   kuta_jimbaran: 9.5,
   kuta_nusa_dua: 16.5,
-  kuta_denpasar: 10.0,
+  kuta_tanjung_benoa: 17.0,
+  kuta_kuta_selatan: 12.0,
+  kuta_ungasan: 17.5,
   kuta_tanah_lot: 23.5,
   kuta_pecatu_uluwatu: 24.0,
+  kuta_kerobokan: 9.0,
 
   // Jimbaran & Nusa Dua routes
   jimbaran_nusa_dua: 11.0,
+  jimbaran_tanjung_benoa: 12.5,
+  jimbaran_kuta_selatan: 4.5,
+  jimbaran_ungasan: 7.0,
   jimbaran_pecatu_uluwatu: 15.0,
+  jimbaran_denpasar_kota: 16.5,
+
+  nusa_dua_tanjung_benoa: 4.5,
+  nusa_dua_ungasan: 13.0,
   nusa_dua_pecatu_uluwatu: 21.0,
 
   // Tanah Lot & Tabanan routes
   tanah_lot_tabanan_kediri: 11.5,
+  tanah_lot_tabanan_kerambitan: 18.0,
   tanah_lot_mengwi: 16.0,
   tanah_lot_sukawati: 33.0,
+  tanah_lot_seseh: 7.5,
+  tanah_lot_pererenan: 9.5,
+
+  mengwi_abiansemal: 8.5,
+  mengwi_tabanan_kediri: 10.5,
+  sukawati_batubulan: 6.5,
+  sukawati_denpasar_kota: 13.0,
+  sukawati_abiansemal: 15.0,
 };
 
-// Default jarak rata-rata antar zona (jika pasangan spesifik belum didefinisikan)
-const DEFAULT_ZONE_DISTANCES: Record<string, number> = {
+// Default jarak rata-rata antar zona (Sync with content.json with fallback)
+const DEFAULT_ZONE_DISTANCES: Record<string, number> =
+  (contentData?.servicesPages?.petTransport?.pricingConfig?.distancesKm as Record<string, number>) || {
   "1-1": 6.5,
   "1-2": 11.5,
   "1-3": 17.5,
@@ -200,21 +246,30 @@ export function getRatePerKm(fromZone: number, toZone: number): number {
   return ZONE_RATES_PER_KM[key] ?? 10000;
 }
 
-export function getEstimatedDistance(fromAreaId: string, toAreaId: string): number {
+export function getEstimatedDistance(
+  fromAreaId: string,
+  toAreaId: string,
+  customDistances?: Record<string, number>
+): number {
   if (fromAreaId === toAreaId) {
     return 3.0; // Perjalanan lokal dalam satu kelurahan/desa
   }
 
-  // Cek key arah A -> B
-  const keyA = `${fromAreaId.replace(/-/g, "_")}_${toAreaId.replace(/-/g, "_")}`;
-  if (SPECIFIC_DISTANCES[keyA] !== undefined) {
-    return SPECIFIC_DISTANCES[keyA];
+  const distances = customDistances || AREA_DISTANCES;
+
+  // Cek key arah A -> B (dengan normalisasi - menjadi _)
+  const cleanFrom = fromAreaId.replace(/-/g, "_").toLowerCase();
+  const cleanTo = toAreaId.replace(/-/g, "_").toLowerCase();
+
+  const keyA = `${cleanFrom}_${cleanTo}`;
+  if (distances[keyA] !== undefined) {
+    return distances[keyA];
   }
 
   // Cek key arah B -> A
-  const keyB = `${toAreaId.replace(/-/g, "_")}_${fromAreaId.replace(/-/g, "_")}`;
-  if (SPECIFIC_DISTANCES[keyB] !== undefined) {
-    return SPECIFIC_DISTANCES[keyB];
+  const keyB = `${cleanTo}_${cleanFrom}`;
+  if (distances[keyB] !== undefined) {
+    return distances[keyB];
   }
 
   // Fallback berdasarkan zona
@@ -230,7 +285,12 @@ export function getEstimatedDistance(fromAreaId: string, toAreaId: string): numb
 
 export function calculateFare(
   fromAreaId: string,
-  toAreaId: string
+  toAreaId: string,
+  options?: {
+    customDistances?: Record<string, number>;
+    customRates?: Record<string, number>;
+    customMinimumFare?: number;
+  }
 ): {
   distanceKm: number;
   fromZone: number;
@@ -243,14 +303,16 @@ export function calculateFare(
   const fromArea = PAWCAB_AREAS.find((a) => a.id === fromAreaId) || PAWCAB_AREAS[0];
   const toArea = PAWCAB_AREAS.find((a) => a.id === toAreaId) || PAWCAB_AREAS[6]; // default Canggu
 
-  const distanceKm = getEstimatedDistance(fromArea.id, toArea.id);
-  const ratePerKm = getRatePerKm(fromArea.zoneId, toArea.zoneId);
+  const distanceKm = getEstimatedDistance(fromArea.id, toArea.id, options?.customDistances);
+  const zoneKey = `${fromArea.zoneId}-${toArea.zoneId}`;
+  const ratePerKm = options?.customRates?.[zoneKey] ?? getRatePerKm(fromArea.zoneId, toArea.zoneId);
+  const minFare = options?.customMinimumFare ?? MINIMUM_FARE;
 
   const rawFare = distanceKm * ratePerKm;
   // Dibulatkan ke ribuan terdekat
   const subtotal = Math.round(rawFare / 1000) * 1000;
-  const finalFare = Math.max(subtotal, MINIMUM_FARE);
-  const isMinimumApplied = subtotal < MINIMUM_FARE;
+  const finalFare = Math.max(subtotal, minFare);
+  const isMinimumApplied = subtotal < minFare;
 
   return {
     distanceKm,
