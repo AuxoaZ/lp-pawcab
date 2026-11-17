@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { checkServerSession } from "@/lib/auth";
 import { fetchFileFromGitHub, commitFileToGitHub, getGitHubConfig } from "@/lib/github";
-import localContent from "@/data/content.json";
+import localContent from "@/lib/content";
 import fs from "fs";
 import path from "path";
 
@@ -114,6 +115,12 @@ export async function POST(request: Request) {
         }
       } catch {
         // Silently ignore in read-only / serverless runtime
+      }
+
+      try {
+        revalidatePath("/", "layout");
+      } catch {
+        // Silently ignore
       }
 
       return NextResponse.json({

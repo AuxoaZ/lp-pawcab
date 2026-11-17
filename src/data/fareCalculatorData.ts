@@ -4,7 +4,7 @@
 // langsung ke headless CMS (Sanity / Strapi / Supabase / JSON API).
 // ============================================================================
 
-import contentData from "@/data/content.json";
+import contentData from "@/lib/content";
 
 export interface ZoneDefinition {
   id: number;

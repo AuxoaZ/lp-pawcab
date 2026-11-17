@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
-import contentData from "@/data/content.json";
+import contentData from "@/lib/content";
 
 export default function AboutSection() {
   const about = contentData.home.about;

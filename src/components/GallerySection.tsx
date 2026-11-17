@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
-import contentData from "@/data/content.json";
+import contentData from "@/lib/content";
 
 export default function GallerySection() {
   const gallery = contentData.home.gallery;

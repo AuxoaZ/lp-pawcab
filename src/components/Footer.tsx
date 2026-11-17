@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BsInstagram, BsWhatsapp, BsLock } from "react-icons/bs";
-import contentData from "@/data/content.json";
+import contentData from "@/lib/content";
 
 export default function Footer() {
   const footer = contentData.footer;

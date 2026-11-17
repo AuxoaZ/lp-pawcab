@@ -8,6 +8,7 @@ import PetTransportPricing from "@/components/PetTransportPricing";
 import PetTransportFAQ from "@/components/PetTransportFAQ";
 import { BsArrowRight, BsCheckCircleFill } from "react-icons/bs";
 import { PiCarProfile, PiSnowflake, PiPawPrint, PiUser } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Private Pet Transportation | The PawCab Bali",
@@ -15,8 +16,22 @@ export const metadata: Metadata = {
     "Safe, comfortable, and stress-free private pet transportation across Bali. Door-to-door rides for vet visits, grooming, airport transfers, and adventures.",
 };
 
+const defaultIcons = [
+  <PiCarProfile key="1" className="text-3xl text-deep-midnight" />,
+  <PiSnowflake key="2" className="text-3xl text-deep-midnight" />,
+  <PiPawPrint key="3" className="text-3xl text-deep-midnight" />,
+  <PiUser key="4" className="text-3xl text-deep-midnight" />,
+];
+
 export default function PetTransportPage() {
-  const highlights = [
+  const transport = contentData.servicesPages?.petTransport;
+  const rawHighlights = transport?.highlights || [];
+
+  const highlights = rawHighlights.length > 0 ? rawHighlights.map((h, idx) => ({
+    icon: defaultIcons[idx % defaultIcons.length],
+    title: h.title,
+    subtitle: h.subtitle,
+  })) : [
     {
       icon: <PiCarProfile className="text-3xl text-deep-midnight" />,
       title: "Private Vehicle",
@@ -39,7 +54,7 @@ export default function PetTransportPage() {
     },
   ];
 
-  const comfortFeatures = [
+  const comfortFeatures = transport?.comfortFeatures && transport.comfortFeatures.length > 0 ? transport.comfortFeatures : [
     "Clean and well-maintained vehicle",
     "Pet-friendly and comfortable interior",
     "Medium crate available",
@@ -59,7 +74,7 @@ export default function PetTransportPage() {
           {/* Background Image on the Right */}
           <div className="absolute right-0 top-0 bottom-0 w-full md:w-[60%] lg:w-[56%] h-full">
             <img
-              src="https://images.unsplash.com/photo-1703828654117-112baa788e51?q=80&w=1170&auto=format&fit=crop"
+              src={transport?.hero?.heroImage || "https://images.unsplash.com/photo-1703828654117-112baa788e51?q=80&w=1170&auto=format&fit=crop"}
               alt="Golden retriever looking out car window"
               className="w-full h-full object-cover object-center"
             />
@@ -109,22 +124,23 @@ export default function PetTransportPage() {
               <div className="inline-flex items-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-pawcab-gold inline-block" />
                 <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-warm-taupe font-semibold">
-                  PRIVATE PET TRANSPORTATION
+                  {transport?.hero?.badge || "PRIVATE PET TRANSPORTATION"}
                 </p>
               </div>
 
               {/* Headline */}
               <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-[62px] text-deep-midnight font-bold leading-[1.12] tracking-tight mb-6">
-                A Private Ride <br />
-                Just for Your Pet.
+                {transport?.hero?.title || (
+                  <>
+                    A Private Ride <br />
+                    Just for Your Pet.
+                  </>
+                )}
               </h1>
 
               {/* Description */}
               <p className="text-deep-midnight/80 font-medium text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                Safe, comfortable, and stress-free transportation for your
-                beloved companions. Whether it&apos;s a vet appointment,
-                grooming session, airport transfer, or a little adventure, we
-                make sure your pets travel in comfort with a personal touch.
+                {transport?.hero?.subtitle || "Safe, comfortable, and stress-free transportation for your beloved companions. Whether it's a vet appointment, grooming session, airport transfer, or a little adventure, we make sure your pets travel in comfort with a personal touch."}
               </p>
 
               {/* CTA Button */}

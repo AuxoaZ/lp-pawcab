@@ -7,27 +7,30 @@ import {
   PiHeart,
   PiCarProfile,
 } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 export default function ComfortSection() {
+  const comfort = contentData.home?.comfort;
+
   const details = [
     {
       icon: <PiCarProfile className="text-2xl text-deep-midnight" />,
-      title: "Spacious cabin",
+      title: comfort?.features?.[0] || "Spacious cabin",
       subtitle: "No cramped kennels",
     },
     {
       icon: <PiUser className="text-2xl text-deep-midnight" />,
-      title: "Owner can join",
+      title: comfort?.features?.[1] || "Owner can join",
       subtitle: "Ride together",
     },
     {
       icon: <PiSnowflake className="text-2xl text-deep-midnight" />,
-      title: "Air-conditioned",
+      title: comfort?.features?.[2] || "Air-conditioned",
       subtitle: "For a cooler, calmer ride",
     },
     {
       icon: <PiPawPrint className="text-2xl text-deep-midnight" />,
-      title: "Suitable for all breeds",
+      title: comfort?.features?.[3] || "Suitable for all breeds",
       subtitle: "All breeds & sizes",
     },
     {
@@ -47,7 +50,7 @@ export default function ComfortSection() {
       {/* Background Image on the Right with Soft Left Gradient Blend */}
       <div className="absolute right-0 top-0 bottom-0 w-full md:w-[58%] lg:w-[52%] h-full">
         <img
-          src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1974&auto=format&fit=crop"
+          src={comfort?.image || "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1974&auto=format&fit=crop"}
           alt="Comfortable dog in car"
           className="w-full h-full object-cover object-center"
         />
@@ -74,10 +77,10 @@ export default function ComfortSection() {
         {/* Details Side (Left) */}
         <div className="w-full md:w-7/12 lg:w-6/12 flex flex-col justify-center">
           <p className="uppercase tracking-[0.2em] text-xs md:text-sm text-warm-taupe font-semibold mb-3">
-            A Ride Made For Dogs
+            {comfort?.badge || "A Ride Made For Dogs"}
           </p>
           <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl text-deep-midnight mb-8">
-            Comfort in Every Detail.
+            {comfort?.headingLine1 ? `${comfort.headingLine1} ${comfort.headingLine2 || ""}` : "Comfort in Every Detail."}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-7 gap-x-6">
@@ -106,7 +109,7 @@ export default function ComfortSection() {
       {/* Bottom Cursive Text aligned with Navbar width */}
       <div className="relative z-10 max-w-7xl mx-auto w-full mt-6 hidden md:flex justify-end pointer-events-none">
         <p className="font-playfair italic text-deep-midnight md:text-soft-white text-xl md:text-2xl lg:text-3xl transform -rotate-6 drop-shadow-md">
-          Comfort Comes First ♡
+          {comfort?.quoteText || "Comfort Comes First ♡"}
         </p>
       </div>
     </section>

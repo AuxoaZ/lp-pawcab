@@ -1,9 +1,26 @@
 import React from "react";
 import { BsArrowRight, BsCheckCircleFill, BsInfoCircle } from "react-icons/bs";
 import { PiPawPrint, PiTreePalm } from "react-icons/pi";
+import contentData from "@/lib/content";
+
+const planIcons: Record<string, React.ReactNode> = {
+  neighborhood: <PiPawPrint className="text-2xl text-deep-midnight" />,
+  beach: <PiTreePalm className="text-2xl text-deep-midnight" />,
+};
 
 export default function DogWalkingPricing() {
-  const plans = [
+  const cmsPlans = contentData.servicesPages?.dogWalking?.pricingPlans;
+
+  const plans = cmsPlans && cmsPlans.length > 0 ? cmsPlans.map((p) => ({
+    id: p.id,
+    icon: planIcons[p.id] || <PiPawPrint className="text-2xl text-deep-midnight" />,
+    title: p.title,
+    subtitle: p.subtitle,
+    features: p.features,
+    price: `Rp ${Number(p.price).toLocaleString("id-ID")}`,
+    unit: p.unit || "/ session",
+    waText: p.waText || `Hi PawCab, I'd like to book a ${p.title}.`,
+  })) : [
     {
       id: "neighborhood",
       icon: <PiPawPrint className="text-2xl text-deep-midnight" />,

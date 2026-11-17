@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import { BsChevronDown, BsWhatsapp } from "react-icons/bs";
 import { PiSparkleFill, PiChatCircleDotsFill } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 interface FAQItem {
   id: number;
   number: string;
   question: string;
-  answerPrefix: string;
+  answer?: string;
+  answerPrefix?: string;
   answerBold?: string;
   answerMiddle?: string;
   answerBold2?: string;
@@ -16,7 +18,9 @@ interface FAQItem {
 }
 
 export default function PetTransportFAQ() {
-  const allFaqs: FAQItem[] = [
+  const cmsFaqs = contentData.servicesPages?.petTransport?.faqs;
+
+  const defaultFaqs: FAQItem[] = [
     {
       id: 1,
       number: "01",
@@ -128,12 +132,15 @@ export default function PetTransportFAQ() {
     },
   ];
 
-  // Left column (1 to 7) & Right column (8 to 13)
-  const leftFaqs = allFaqs.slice(0, 7);
-  const rightFaqs = allFaqs.slice(7);
+  const allFaqs = cmsFaqs && cmsFaqs.length > 0 ? (cmsFaqs as unknown as FAQItem[]) : defaultFaqs;
 
-  // By default, open the first item in each column so users immediately see content
-  const [openIds, setOpenIds] = useState<number[]>([1, 8]);
+  // Split into 2 balanced columns
+  const half = Math.ceil(allFaqs.length / 2);
+  const leftFaqs = allFaqs.slice(0, half);
+  const rightFaqs = allFaqs.slice(half);
+
+  // By default, open the first item
+  const [openIds, setOpenIds] = useState<number[]>([allFaqs[0]?.id || 1]);
 
   const toggleItem = (id: number) => {
     setOpenIds((prev) =>
@@ -209,19 +216,25 @@ export default function PetTransportFAQ() {
               <span className="inline-block px-2 py-0.5 rounded bg-pawcab-gold/20 text-deep-midnight font-bold text-xs uppercase tracking-wider mr-2">
                 Answer
               </span>
-              <span>{item.answerPrefix}</span>
-              {item.answerBold && (
-                <strong className="font-semibold text-deep-midnight">
-                  {item.answerBold}
-                </strong>
+              {item.answer ? (
+                <span>{item.answer}</span>
+              ) : (
+                <>
+                  <span>{item.answerPrefix}</span>
+                  {item.answerBold && (
+                    <strong className="font-semibold text-deep-midnight">
+                      {item.answerBold}
+                    </strong>
+                  )}
+                  {item.answerMiddle}
+                  {item.answerBold2 && (
+                    <strong className="font-semibold text-deep-midnight">
+                      {item.answerBold2}
+                    </strong>
+                  )}
+                  {item.answerSuffix}
+                </>
               )}
-              {item.answerMiddle}
-              {item.answerBold2 && (
-                <strong className="font-semibold text-deep-midnight">
-                  {item.answerBold2}
-                </strong>
-              )}
-              {item.answerSuffix}
             </div>
           </div>
         </div>

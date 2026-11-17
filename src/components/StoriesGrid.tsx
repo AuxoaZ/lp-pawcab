@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { BsArrowRight, BsStarFill } from "react-icons/bs";
 import { PiMapPin, PiCalendarBlank } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 export type Story = {
   id: string;
@@ -21,7 +22,7 @@ export type Story = {
   rating: number;
 };
 
-const storiesData: Story[] = [
+const defaultStoriesData: Story[] = [
   {
     id: "luna-echo-beach",
     title: "Luna's First Sunset Run at Echo Beach",
@@ -151,7 +152,10 @@ export default function StoriesGrid() {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("all");
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
 
-  const filteredStories = storiesData.filter((item) => {
+  const cmsStories = (contentData.stories?.storiesList as unknown as Story[]) || [];
+  const storiesList = cmsStories.length > 0 ? cmsStories : defaultStoriesData;
+
+  const filteredStories = storiesList.filter((item) => {
     if (activeCategory === "all") return true;
     return item.category === activeCategory;
   });

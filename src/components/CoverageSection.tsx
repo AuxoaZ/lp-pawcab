@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "./Button";
 import { BsArrowRight } from "react-icons/bs";
+import contentData from "@/lib/content";
 
 export default function CoverageSection() {
+  const coverage = contentData.home?.coverage;
+
   return (
     <section className="bg-deep-midnight text-soft-white flex flex-col lg:flex-row w-full">
       {/* Combined Text & Map Area with Bali Background and Midnight Filter */}
@@ -24,26 +27,27 @@ export default function CoverageSection() {
         {/* Text Content */}
         <div className="relative z-10 w-full md:w-5/12 flex flex-col justify-center">
           <p className="uppercase tracking-[0.2em] text-xs text-pawcab-gold font-semibold mb-2">
-            Our Coverage
+            {coverage?.badge || "Our Coverage"}
           </p>
           <h2 className="font-playfair text-white text-3xl md:text-5xl leading-tight mb-4">
-            Find Your <br /> PawCab Zone.
+            {coverage?.headingLine1 || "Find Your"} <br /> {coverage?.headingLine2 || "PawCab Zone."}
           </h2>
           <p className="text-soft-white/80 font-normal leading-relaxed mb-6 text-sm max-w-xs">
-            Know your zone before you book. Our service covers Bali with simple,
-            transparent pricing.
+            {coverage?.description || "Know your zone before you book. Our service covers Bali with simple, transparent pricing."}
           </p>
           <div>
-            <Button variant="primary" icon={<BsArrowRight />}>
-              View Zones & Rates
-            </Button>
+            <a href={coverage?.ctaHref || "/services/pet-transport#pricing"}>
+              <Button variant="primary" icon={<BsArrowRight />}>
+                {coverage?.ctaText || "View Zones & Rates"}
+              </Button>
+            </a>
           </div>
         </div>
 
         {/* Map Area */}
         <div className="relative z-10 w-full md:w-9/12 flex items-center justify-center">
           <img
-            src="/images/map-zone.png"
+            src={coverage?.mapImage || "/images/map-zone.png"}
             alt="PawCab Bali Coverage Map"
             className="w-full h-full object-contain drop-shadow-2xl max-h-[280px] lg:max-h-[420px]"
           />
@@ -53,16 +57,19 @@ export default function CoverageSection() {
       {/* Right Image (Paling Kanan) */}
       <div className="w-full lg:w-60 xl:w-72 shrink-0 relative h-48 lg:h-auto border-t lg:border-t-0 lg:border-l border-soft-white/10 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop"
+          src={coverage?.sideImage || "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1938&auto=format&fit=crop"}
           alt="Bali Scenic Route"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-deep-midnight/30"></div>
         <div className="absolute bottom-6 right-6 text-right">
           <p className="font-medium tracking-[0.2em] leading-loose text-xs uppercase text-soft-white text-shadow">
-            Scenic routes. <br />
-            Happier <br />
-            journeys.
+            {(coverage?.sideQuoteLines || ["Scenic routes.", "Happier", "journeys."]).map((line, idx) => (
+              <React.Fragment key={idx}>
+                {line}
+                {idx < (coverage?.sideQuoteLines?.length || 3) - 1 && <br />}
+              </React.Fragment>
+            ))}
           </p>
         </div>
       </div>

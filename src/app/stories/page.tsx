@@ -18,6 +18,7 @@ import {
   PiMapPin,
   PiPawPrint,
 } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Pawcab Stories | The PawCab Bali",
@@ -25,8 +26,22 @@ export const metadata: Metadata = {
     "Real experiences, happy paws, and journeys made better with The PawCab. Explore real stories of pets traveling safely across Bali.",
 };
 
+const defaultHighlightIcons = [
+  <PiHeart key="1" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiCarProfile key="2" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiShieldCheck key="3" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiChatCircleDots key="4" className="text-2xl sm:text-3xl text-deep-midnight" />,
+];
+
 export default function StoriesPage() {
-  const highlights = [
+  const storiesContent = contentData.stories;
+  const rawHighlights = storiesContent?.highlights || [];
+
+  const highlights = rawHighlights.length > 0 ? rawHighlights.map((h, idx) => ({
+    icon: defaultHighlightIcons[idx % defaultHighlightIcons.length],
+    title: h.title,
+    subtitle: h.subtitle,
+  })) : [
     {
       icon: <PiHeart className="text-2xl sm:text-3xl text-deep-midnight" />,
       title: "Compassionate Care",
@@ -68,7 +83,7 @@ export default function StoriesPage() {
           {/* Background Image on the Right from Unsplash */}
           <div className="absolute right-0 top-0 bottom-0 w-full md:w-[58%] lg:w-[54%] h-full">
             <img
-              src="https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1200&auto=format&fit=crop"
+              src={storiesContent?.hero?.heroImage || "https://images.unsplash.com/photo-1544568100-847a948585b9?q=80&w=1200&auto=format&fit=crop"}
               alt="Happy dog enjoying a calm car journey"
               className="w-full h-full object-cover object-center"
             />
@@ -109,19 +124,18 @@ export default function StoriesPage() {
               <div className="inline-flex items-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-pawcab-gold inline-block" />
                 <p className="uppercase tracking-[0.25em] text-xs md:text-sm text-warm-taupe font-semibold">
-                  COMMUNITY & EXPERIENCES
+                  {storiesContent?.hero?.badge || "COMMUNITY & EXPERIENCES"}
                 </p>
               </div>
 
               {/* Page Title */}
               <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl lg:text-[62px] text-deep-midnight font-bold leading-[1.14] tracking-tight mb-6">
-                Pawcab Stories
+                {storiesContent?.hero?.title || "Pawcab Stories"}
               </h1>
 
               {/* Subtitle */}
               <p className="text-deep-midnight/80 font-normal text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                Real experiences, happy paws, and journeys made better with The
-                PawCab.
+                {storiesContent?.hero?.subtitle || "Real experiences, happy paws, and journeys made better with The PawCab."}
               </p>
 
               {/* CTA Buttons */}

@@ -79,10 +79,21 @@ export async function commitFileToGitHub({
 
   const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${filePath}`;
 
+  const committerName = process.env.GITHUB_COMMITTER_NAME || "Alvian Nugroho";
+  const committerEmail = process.env.GITHUB_COMMITTER_EMAIL || "nalviansend@gmail.com";
+
   const payload: Record<string, unknown> = {
     message,
     content: contentBase64,
     branch: config.branch,
+    committer: {
+      name: committerName,
+      email: committerEmail,
+    },
+    author: {
+      name: committerName,
+      email: committerEmail,
+    },
   };
 
   if (sha) {

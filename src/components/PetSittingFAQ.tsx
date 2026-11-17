@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import { BsChevronDown, BsWhatsapp } from "react-icons/bs";
 import { PiSparkleFill, PiChatCircleDotsFill } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 interface FAQItem {
   id: number;
   number: string;
   question: string;
-  answerPrefix: string;
+  answer?: string;
+  answerPrefix?: string;
   answerBold?: string;
   answerMiddle?: string;
   answerBold2?: string;
@@ -16,7 +18,9 @@ interface FAQItem {
 }
 
 export default function PetSittingFAQ() {
-  const allFaqs: FAQItem[] = [
+  const cmsFaqs = contentData.servicesPages?.petSitting?.faqs;
+
+  const defaultFaqs: FAQItem[] = [
     {
       id: 1,
       number: "01",
@@ -73,7 +77,9 @@ export default function PetSittingFAQ() {
     },
   ];
 
-  const [openIds, setOpenIds] = useState<number[]>([1, 6]);
+  const allFaqs = cmsFaqs && cmsFaqs.length > 0 ? (cmsFaqs as unknown as FAQItem[]) : defaultFaqs;
+
+  const [openIds, setOpenIds] = useState<number[]>([allFaqs[0]?.id || 1]);
 
   const toggleItem = (id: number) => {
     setOpenIds((prev) =>
@@ -89,8 +95,9 @@ export default function PetSittingFAQ() {
     setOpenIds([]);
   };
 
-  const leftFaqs = allFaqs.slice(0, 3);
-  const rightFaqs = allFaqs.slice(3);
+  const half = Math.ceil(allFaqs.length / 2);
+  const leftFaqs = allFaqs.slice(0, half);
+  const rightFaqs = allFaqs.slice(half);
 
   const renderCard = (item: FAQItem) => {
     const isOpen = openIds.includes(item.id);
@@ -143,21 +150,27 @@ export default function PetSittingFAQ() {
           }`}
         >
           <div className="overflow-hidden">
-            <p className="text-deep-midnight/80 text-sm sm:text-base leading-relaxed pl-11.5 sm:pl-12.5 font-normal">
-              {item.answerPrefix}
-              {item.answerBold && (
-                <strong className="font-semibold text-deep-midnight">
-                  {item.answerBold}
-                </strong>
+            <div className="text-deep-midnight/80 text-sm sm:text-base leading-relaxed pl-11.5 sm:pl-12.5 font-normal">
+              {item.answer ? (
+                <span>{item.answer}</span>
+              ) : (
+                <>
+                  {item.answerPrefix}
+                  {item.answerBold && (
+                    <strong className="font-semibold text-deep-midnight">
+                      {item.answerBold}
+                    </strong>
+                  )}
+                  {item.answerMiddle}
+                  {item.answerBold2 && (
+                    <strong className="font-semibold text-deep-midnight">
+                      {item.answerBold2}
+                    </strong>
+                  )}
+                  {item.answerSuffix}
+                </>
               )}
-              {item.answerMiddle}
-              {item.answerBold2 && (
-                <strong className="font-semibold text-deep-midnight">
-                  {item.answerBold2}
-                </strong>
-              )}
-              {item.answerSuffix}
-            </p>
+            </div>
           </div>
         </div>
       </div>

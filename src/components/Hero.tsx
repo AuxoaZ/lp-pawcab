@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { BsArrowRight } from "react-icons/bs";
-import contentData from "@/data/content.json";
+import contentData from "@/lib/content";
 
 export default function Hero() {
   const hero = contentData.home.hero;

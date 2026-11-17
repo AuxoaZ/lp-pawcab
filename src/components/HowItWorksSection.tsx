@@ -1,10 +1,26 @@
 import React from "react";
 import Button from "./Button";
 import { BsArrowRight, BsWhatsapp } from "react-icons/bs";
-import { PiCalendarBlank, PiChatText, PiCarProfile } from "react-icons/pi";
+import { PiCalendarBlank, PiChatText, PiCarProfile, PiCheckCircle } from "react-icons/pi";
+import contentData from "@/lib/content";
+
+const stepIcons = [
+  <PiCalendarBlank key="1" className="text-2xl text-deep-midnight" />,
+  <PiChatText key="2" className="text-2xl text-deep-midnight" />,
+  <PiCarProfile key="3" className="text-2xl text-deep-midnight" />,
+  <PiCheckCircle key="4" className="text-2xl text-deep-midnight" />,
+];
 
 export default function HowItWorksSection() {
-  const steps = [
+  const howItWorks = contentData.home?.howItWorks;
+  const rawSteps = howItWorks?.steps || [];
+
+  const steps = rawSteps.length > 0 ? rawSteps.map((s, idx) => ({
+    id: s.number || `0${idx + 1}`,
+    icon: stepIcons[idx % stepIcons.length],
+    title: s.title,
+    desc: s.description,
+  })) : [
     {
       id: "01",
       icon: <PiCalendarBlank className="text-2xl text-deep-midnight" />,
@@ -31,10 +47,14 @@ export default function HowItWorksSection() {
         {/* Title Area */}
         <div className="w-full xl:w-1/4 text-center xl:text-left">
           <p className="uppercase tracking-[0.2em] text-sm text-warm-taupe font-semibold mb-4">
-            How It Works
+            {howItWorks?.badge || "How It Works"}
           </p>
           <h2 className="font-playfair text-4xl text-deep-midnight">
-            Booking a Ride <br className="hidden xl:block" /> is Easy.
+            {howItWorks?.heading || (
+              <>
+                Booking a Ride <br className="hidden xl:block" /> is Easy.
+              </>
+            )}
           </h2>
         </div>
 
@@ -62,16 +82,23 @@ export default function HowItWorksSection() {
 
         {/* Action Area */}
         <div className="w-full xl:w-1/4 flex flex-col items-center xl:items-end text-center xl:text-right">
-          <Button
-            variant="secondary"
-            className="mb-4 w-full md:w-auto flex justify-between"
-            icon={<BsArrowRight />}
+          <a
+            href={contentData.site?.whatsapp ? `https://wa.me/${contentData.site.whatsapp}` : "https://wa.me/6282266383800"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full md:w-auto"
           >
-            <div className="flex items-center gap-2">
-              <BsWhatsapp className="text-lg" />
-              <span>Book Via WhatsApp</span>
-            </div>
-          </Button>
+            <Button
+              variant="secondary"
+              className="mb-4 w-full md:w-auto flex justify-between"
+              icon={<BsArrowRight />}
+            >
+              <div className="flex items-center gap-2">
+                <BsWhatsapp className="text-lg" />
+                <span>Book Via WhatsApp</span>
+              </div>
+            </Button>
+          </a>
           <p className="text-xs text-deep-midnight/70 font-medium">
             Quick, easy, and pet-friendly. ♡
           </p>

@@ -15,6 +15,7 @@ import {
   PiCalendarCheck,
   PiHeart,
 } from "react-icons/pi";
+import contentData from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "In-Home Pet Sitting in Bali | The PawCab",
@@ -22,8 +23,22 @@ export const metadata: Metadata = {
     "Loving care, right at home. In-home pet sitting in Bali allowing your pets to stay comfortable in their familiar environment with personalized routines.",
 };
 
+const defaultHighlightIcons = [
+  <PiHouse key="1" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiBowlFood key="2" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiTennisBall key="3" className="text-2xl sm:text-3xl text-deep-midnight" />,
+  <PiShieldCheck key="4" className="text-2xl sm:text-3xl text-deep-midnight" />,
+];
+
 export default function PetSittingPage() {
-  const highlights = [
+  const petSitting = contentData.servicesPages?.petSitting;
+  const rawHighlights = petSitting?.highlights || [];
+
+  const highlights = rawHighlights.length > 0 ? rawHighlights.map((h, idx) => ({
+    icon: defaultHighlightIcons[idx % defaultHighlightIcons.length],
+    title: h.title,
+    subtitle: h.subtitle,
+  })) : [
     {
       icon: <PiHouse className="text-2xl sm:text-3xl text-deep-midnight" />,
       title: "In-Home Care",
@@ -50,7 +65,7 @@ export default function PetSittingPage() {
     },
   ];
 
-  const careFeatures = [
+  const careFeatures: string[] = [
     "Care tailored to your pet's needs",
     "Feeding and fresh water",
     "Playtime and companionship",

@@ -1,9 +1,11 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import Link from "next/link";
+import contentData from "@/lib/content";
 
 export default function ServicesSection() {
-  const services = [
+  const section = contentData.home?.services;
+  const services = section?.items && section.items.length > 0 ? section.items : [
     {
       id: "01",
       title: "Pet Transport",
@@ -37,16 +39,15 @@ export default function ServicesSection() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div>
             <p className="uppercase tracking-[0.2em] text-sm text-warm-taupe font-semibold mb-4">
-              Our Services
+              {section?.badge || "Our Services"}
             </p>
             <h2 className="font-playfair text-4xl md:text-5xl text-deep-midnight">
-              Every Journey, A Better Day.
+              {section?.heading || "Every Journey, A Better Day."}
             </h2>
           </div>
           <div className="text-right">
             <p className="text-deep-midnight/80 font-normal mb-2 max-w-sm ml-auto">
-              From daily rides to special adventures, we&apos;re here for every
-              step of their journey.
+              {section?.subtitle || "From daily rides to special adventures, we're here for every step of their journey."}
             </p>
             <a
               href="#services"
