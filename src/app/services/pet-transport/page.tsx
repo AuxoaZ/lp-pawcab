@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   title: "Private Pet Transportation | The PawCab Bali",
   description:
     "Safe, comfortable, and stress-free private pet transportation across Bali. Door-to-door rides for vet visits, grooming, airport transfers, and adventures.",
+  alternates: { canonical: "/services/pet-transport" },
+  openGraph: { title: "Private Pet Transportation | The PawCab Bali", description: "Safe, comfortable, and stress-free private pet transportation across Bali. Door-to-door rides for vet visits, grooming, airport transfers, and adventures.", url: "/services/pet-transport", type: "website" },
 };
 
 const defaultIcons = [

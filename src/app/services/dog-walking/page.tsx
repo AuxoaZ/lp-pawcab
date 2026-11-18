@@ -19,6 +19,8 @@ export const metadata: Metadata = {
   title: "Dog Walking Services in Bali | The PawCab",
   description:
     "Little walks, big adventures. Safe, thoughtful neighborhood and beach dog walking in Bali tailored to your dog's pace and personality.",
+  alternates: { canonical: "/services/dog-walking" },
+  openGraph: { title: "Dog Walking Services in Bali | The PawCab", description: "Little walks, big adventures. Safe, thoughtful neighborhood and beach dog walking in Bali tailored to your dog's pace and personality.", url: "/services/dog-walking", type: "website" },
 };
 
 export default function DogWalkingPage() {

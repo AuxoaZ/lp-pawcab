@@ -24,6 +24,8 @@ export const metadata: Metadata = {
   title: "Pawcab Stories | The PawCab Bali",
   description:
     "Real experiences, happy paws, and journeys made better with The PawCab. Explore real stories of pets traveling safely across Bali.",
+  alternates: { canonical: "/stories" },
+  openGraph: { title: "Pawcab Stories | The PawCab Bali", description: "Real experiences, happy paws, and journeys made better with The PawCab. Explore real stories of pets traveling safely across Bali.", url: "/stories", type: "website" },
 };
 
 const defaultHighlightIcons = [

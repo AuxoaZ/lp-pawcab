@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   title: "In-Home Pet Sitting in Bali | The PawCab",
   description:
     "Loving care, right at home. In-home pet sitting in Bali allowing your pets to stay comfortable in their familiar environment with personalized routines.",
+  alternates: { canonical: "/services/pet-sitting" },
+  openGraph: { title: "In-Home Pet Sitting in Bali | The PawCab", description: "Loving care, right at home. In-home pet sitting in Bali allowing your pets to stay comfortable in their familiar environment with personalized routines.", url: "/services/pet-sitting", type: "website" },
 };
 
 const defaultHighlightIcons = [
